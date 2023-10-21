@@ -162,7 +162,7 @@ googlefonts:
 # Theme and colors
 chulapa-skin:
 chulapa-skin: 
-  skin   : Journal
+  skin   : journal
 
 # D. Jekyll Defaults and collections: see https://jekyllrb.com/
 
