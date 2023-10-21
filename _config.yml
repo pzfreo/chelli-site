@@ -39,6 +39,7 @@ remote_theme: pzfreo/chulapa
 # Overall options for your site, would affect your site SEO
 # Default values are explained
 locale                  :     #default["en-US"] format language-TERRITORY , e.g fr, en-GB, es-MX, pt-BR
+repository              : pzfreo/chelli-site
 title                   : Chelli Strings     #default["repository_name"]
 title_separator         :     #default [" | "]
 subtitle                : Handcrafted stringed instruments from Sussex    #default [your-repository-tagline]
