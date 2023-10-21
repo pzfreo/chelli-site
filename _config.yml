@@ -21,11 +21,10 @@
 title: Chelli Strings
 email: paul@fremantle.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "www.chellistrings.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
+  Website for Chelli Strings
+domain: chellistrings.co.uk       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+baseurl: /      # place folder name if the site is served in a subfolder
+url: "https://www.chellistrings.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: pzfreo
 github_username:  pzfreo
 
