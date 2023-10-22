@@ -28,3 +28,4 @@ How will it play? How will it feel? How will it sound? How will it look? These a
 ![Paul examining a 1660 Meares bass viol at the Royal College of Music](/assets/images/paulfremantle-meares.jpg "Paul Fremantle with Meares bass viol")
 
 Paul examining a 1660 Meares bass viol at the Royal College of Music
+{: .caption}
