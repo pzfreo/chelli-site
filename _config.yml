@@ -138,11 +138,12 @@ navbar:
   - title   : About # Label
     url     : /about # url
   - title   : Gallery # Label submenu
-    child:
-     - title: Bass Viol after Smith # Child label
-       url  : /bassviolsmith # child url
-     - title: Bass Viol after Meares # Child label
-       url  : /bassviolmeares # child url
+    url     : /gallery
+    # child:
+    #  - title: Bass Viol after Smith # Child label
+    #    url  : /bassviolsmith # child url
+    #  - title: Bass Viol after Meares # Child label
+    #    url  : /bassviolmeares # child url
 
 #Social links to be placed on your site footer
 footer:
@@ -186,6 +187,11 @@ permalink           : /:year:month:day_:title/
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 defaults:
+  # - 
+  #   scope:
+  #     path: "assets/images/gallery"
+  #   values:
+  #     image_col         : gallery
   -
     scope:
       path: ""
