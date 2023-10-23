@@ -139,6 +139,8 @@ navbar:
     url     : /about # url
   - title   : Gallery # Label submenu
     url     : /gallery
+  - title   : Contact Us 
+    url     : /contact
     # child:
     #  - title: Bass Viol after Smith # Child label
     #    url  : /bassviolsmith # child url

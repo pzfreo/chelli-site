@@ -33,6 +33,8 @@ header_img: "./assets/images/scroll.jpg"
 # Violin after Stradivari
 {% include_cached snippets/masonry.html external=externalgalleryviolin %}
 
+
+
 # Terz Guitar after Stauffer
 {% include_cached snippets/masonry.html external=externalgalleryterz %}
 
