@@ -179,18 +179,11 @@ paginator_maxnum: 3  #default[3] Custom: max of number to be displayed on the pa
 
 
 # Collections https://jekyllrb.com/docs/step-by-step/09-collections/
+collections_dir: .
 collections:
-  demo:
+  posts:
     output: true
-    permalink: /demo/:name
-  docs:
-    output: true
-    permalink: /docs/:name
-  skins:
-    output: true
-    permalink: /skins/:name
-collections_dir     : docs/collections
-permalink           : /:year:month:day_:title/
+    permalink : /blog/:year:month:day_:title
 
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
@@ -211,7 +204,7 @@ defaults:
       cloudcategory_url   : "/categories" #This is where the link on categories would redirect
   -
     scope:
-      path: "/_posts"
+      path: ""
       type: "posts"
     values:
       header_type       : "post"

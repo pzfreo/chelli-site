@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: post
 title:  "Setting up a bass viol"
 date:   2023-10-24 15:20:35 +0100
 categories: viol setup violadagamba
+post: true
 excerpt_separator: <!--more-->
 ---
 
