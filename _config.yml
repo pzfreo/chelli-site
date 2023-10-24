@@ -138,14 +138,20 @@ navbar:
   - title   : About # Label
     url     : /about # url
   - title   : Gallery # Label submenu
-    url     : /gallery
+    child:
+     - title: <span class="font-weight-bold">Gallery Home</span>
+       url  : /gallery
+     - title: Violin # Child label
+       url  : /gallery/violin # child url
+     - title: Terz Guitar # Child label
+       url  : /gallery/terz # child url
+     - title: Steel String Guitar
+       url  : /gallery/gsmini
   - title   : Contact Us 
     url     : /contact
-    # child:
-    #  - title: Bass Viol after Smith # Child label
-    #    url  : /bassviolsmith # child url
-    #  - title: Bass Viol after Meares # Child label
-    #    url  : /bassviolmeares # child url
+  - title   : Blog
+    url     : /blog
+    
 
 #Social links to be placed on your site footer
 footer:
@@ -205,7 +211,7 @@ defaults:
       cloudcategory_url   : "/categories" #This is where the link on categories would redirect
   -
     scope:
-      path: ""
+      path: "/_posts"
       type: "posts"
     values:
       header_type       : "post"

@@ -1,0 +1,17 @@
+---
+layout: landingpage
+title: Blog
+permalink: /blog
+subtitle: News from the workshop
+excerpt: 
+header_type: hero
+header_img: "./assets/images/scroll.jpg"
+---
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>

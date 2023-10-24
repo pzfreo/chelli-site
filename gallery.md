@@ -8,35 +8,15 @@ header_type: hero
 header_img: "./assets/images/scroll.jpg"
 ---
 
-{% assign externalgalleryviolin = "
-./assets/images/gallery/violin/back.jpg,
-./assets/images/gallery/violin/head.jpg,
-./assets/images/gallery/violin/top1.jpg,
-./assets/images/gallery/violin/top2.jpg,
-./assets/images/gallery/violin/top3.jpg" %}
-
-{% assign externalgalleryterz = "
-./assets/images/gallery/terz/back1.jpg,
-./assets/images/gallery/terz/back2.jpg,
-./assets/images/gallery/terz/front1.jpg,
-./assets/images/gallery/terz/front2.jpg,
-./assets/images/gallery/terz/head.jpg" %}
-
-{% assign externalgallerygsmini = "
-./assets/images/gallery/gsmini/top1.jpg,
-./assets/images/gallery/gsmini/top2.jpg,
-./assets/images/gallery/gsmini/back1.jpg,
-./assets/images/gallery/gsmini/back2.jpg,
-./assets/images/gallery/gsmini/head.jpg" %}
 
 
-# Violin after Stradivari
-{% include_cached snippets/masonry.html external=externalgalleryviolin %}
+#### Click on the images to see more
+
+| :-----: | :-----: | :-----: |
+|  [Violin after Stradivari](/gallery/violin) | [Terz Guitar after Stauffer](/gallery/terz) | [Steel String Guitar](/gallery/gsmini) |
+| <a href="/gallery/violin"><img src="/assets/images/gallery/violin/top3.jpg" height="100"></a> | <a href="/gallery/terz"><img src="/assets/images/gallery/terz/back2.jpg"  height="220"></a> | <a href="/gallery/gsmini"><img src="/assets/images/gallery/gsmini/top2.jpg" height="230"></a> |
 
 
 
-# Terz Guitar after Stauffer
-{% include_cached snippets/masonry.html external=externalgalleryterz %}
 
-# Modern Steel String Guitar GS Mini
-{% include_cached snippets/masonry.html external=externalgallerygsmini %}
+
