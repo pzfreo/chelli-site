@@ -102,11 +102,11 @@ chulapa-skin:
 
 
 # Collections https://jekyllrb.com/docs/step-by-step/09-collections/
-collections_dir:  .
-collections:
-  posts:
-    output: true
-    permalink : /blog/:year:month:day_:title
+# collections_dir:  .
+# collections:
+#   posts:
+#     output: true
+#     permalink : /blog/:year:month:day_:title
 
 # future: true
 # unpublished: true
@@ -118,17 +118,17 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout            : "minimal"
+      layout            : "landingpage"
       include_on_feed   : true
-    #   show_date         : true
-    #   show_related      : true
-    #   show_bottomnavs   : true
-    #   show_sociallinks  : true
-    #   show_comments     : true
-    #   show_tags         : true
-    #   show_categories   : true
-    #   show_author       : true
-    #   show_toc          : false
+      show_date         : true
+      show_related      : true
+      # show_bottomnavs   : true
+      # show_sociallinks  : true
+      # show_comments     : true
+      # show_tags         : true
+      # show_categories   : true
+      # show_author       : true
+      show_toc          : false
   
 
 
