@@ -5,7 +5,7 @@ permalink: /thankyou/
 subtitle: Thanks for contacting us
 excerpt: 
 header_type: hero
-header_img: "./assets/images/scroll.jpg"
+header_img: "./assets/images/violslice2.png"
 ---
 
 

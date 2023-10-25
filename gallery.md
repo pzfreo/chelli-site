@@ -5,7 +5,7 @@ permalink: /gallery/
 subtitle: Handcrafted instruments from Paul Fremantle
 excerpt: 
 header_type: hero
-header_img: "./assets/images/scroll.jpg"
+header_img: "./assets/images/violslice2.png"
 ---
 
 

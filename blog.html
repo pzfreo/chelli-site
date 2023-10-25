@@ -3,13 +3,12 @@ layout: landingpage
 title: Chelli Blog
 subtitle: 'News and updates'
 excerpt: Latest news
-header_img: "./assets/images/scroll.jpg"
+header_img: "./assets/images/violslice2.png"
 ---
 <ul>
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>

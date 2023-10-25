@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: landingpage
 title:  "Setting up a bass viol"
+header_type: post
 date:   2023-10-24 15:20:35 +0100
 categories: viol setup violadagamba
-post: true
 excerpt_separator: <!--more-->
 ---
 

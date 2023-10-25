@@ -5,7 +5,7 @@ permalink: /gallery/terz
 subtitle: After Stauffer 1829
 excerpt: 
 header_type: hero
-header_img: "./assets/images/scroll.jpg"
+header_img: "./assets/images/violslice2.png"
 ---
 
 
