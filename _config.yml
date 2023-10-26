@@ -91,7 +91,7 @@ googlefonts:
 
 # Theme and colors
 chulapa-skin: 
-  skin   : graymor
+  skin   : towards
 
 
 # D. Jekyll Defaults and collections: see https://jekyllrb.com/
