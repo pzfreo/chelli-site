@@ -12,6 +12,8 @@ show_sociallinks: false
 show_tags: false
 ---
 
+<p style="text-align:center"><img src="/assets/images/chellilogo.png" width="300">Chelli Strings</img></p>
+
 
 Paul Fremantle is the craftsman behind Chelli Strings.
 
