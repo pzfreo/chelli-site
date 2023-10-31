@@ -83,6 +83,9 @@ footer:
     - label : Instagram #Label
       icon  : fab fa-instagram # Fontawesome 5 icon
       url   : https://www.instagram.com/paulfremantleluthier # A link or email: https://twitter.com/jack, mail@example.com
+    - label : Email #Label
+      icon  : fas fa-envelope # Fontawesome 5 icon
+      url   : paul@fremantle.org # A link or email: https://twitter.com/jack, mail@example.com
   copyright: # default is © <year> <name>
 
 # C. Theme Settings

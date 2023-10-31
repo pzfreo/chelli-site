@@ -1,8 +1,8 @@
 ---
 layout: landingpage
 title:  "Setting up a bass viol"
-header_type: post
-header_img:   "./assets/images/violslice2.png"
+header_type: hero
+header_img:   "./assets/images/purfling-slice.jpg"
 date:   2023-10-24 15:20:35 +0100
 categories: viol setup violadagamba
 excerpt_separator: <!--more-->

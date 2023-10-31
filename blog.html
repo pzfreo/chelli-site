@@ -4,13 +4,13 @@ title:        Chelli Blog
 subtitle:     'News and updates'
 excerpt:      Latest news
 header_type:  hero
-header_img:   "./assets/images/violslice2.png"
+header_img:   "./assets/images/purfling-slice.jpg"
 ---
 <h3>News and Updates</h3>
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}"><span style="text-decoration: underline; ">{{ post.title }}</span></a>
       {{ post.image }}
       {{ post.excerpt }}
     </li>
