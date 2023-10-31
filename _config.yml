@@ -88,10 +88,15 @@ footer:
 # Google Fonts https://fonts.google.com/, add as many as you need
 googlefonts:
  # - url : # 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
+ googlefonts: 
+ - url: "https://fonts.googleapis.com/css?family=Lato&display=swap"
+
 
 # Theme and colors
 chulapa-skin: 
   skin   : towards
+  vars        :
+    font-family-base: "Lato"
 
 
 # D. Jekyll Defaults and collections: see https://jekyllrb.com/
