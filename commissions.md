@@ -34,7 +34,7 @@ You will get regular updates on the progress. Once the instrument is ready for v
 <p/>
 Commissioning a bespoke instrument that is built to your personal requirements offers the opportunity to have an instrument that fits you perfectly. 
 <p/>
-<a href="/contact">Contact us</a> today to see if this might be the right journey for you.
+<a href="/contact">Contact us</a> today to see if you would like to explore creating a new instrument.
 
 </td><td>
 

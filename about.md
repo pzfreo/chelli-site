@@ -12,7 +12,7 @@ show_sociallinks: false
 show_tags: false
 ---
 
-<p style="text-align:center"><img src="/assets/images/chellilogo.png" width="300"></p>
+<p style="text-align:center"><img src="/assets/images/chellilogo.png" height="250"></p>
 
 
 Paul Fremantle is the craftsman behind Chelli Strings.
@@ -24,7 +24,7 @@ The ethos of our making is that musical instruments become living things at the 
 The start of this journey begins when an instrument is made. Instruments that are bespoke and crafted with love and attention have an aura that makes each handcrafted instrument unique. 
 It is our vision to build instruments that can last generations: made with care and attention; using only wonderful wood; designed to play fluidly and sound rich and timbral.
 
-If you want to commission an instrument from Chelli, start by thinking what it is that excites you about a bespoke instrument. What is your vision for an instrument? What woods will sing to you? How will it play? How will it feel? How will it sound? What inspirations will it build upon? 
+If you want to commission an instrument from Chelli, start by thinking what it is that excites you about a bespoke instrument. What is your vision for an instrument? Which species of woods will sing to you? How will it play? How will it feel? How will it sound? What inspirations will it build upon? 
 
 These are our starting points on every journey to create something new.
 
