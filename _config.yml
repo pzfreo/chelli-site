@@ -53,8 +53,8 @@ gtag_id                 :   G-J1J8NQZY8L
 navbar:
   style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
   brand:
-    # title   : Chelli Strings
-    img     : "/assets/images/chellilogo.png"
+    title   : <span style="font-weight:bold;font-size:150%;font-family:'Mrs Saint Delafield';">Chelli Strings</span>
+    # img     : "/assets/images/chellilogo.png"
   expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
   nav:
   - title   : About # Label
@@ -91,7 +91,7 @@ footer:
 # C. Theme Settings
 # Google Fonts https://fonts.google.com/, add as many as you need
 googlefonts:
-- url: "https://fonts.googleapis.com/css?family=Lato&family=Noto+Serif&display=swap"
+- url: "https://fonts.googleapis.com/css?family=Montserrat&family=Mrs+Saint+Delafield&display=swap"
  # - url : # 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
 #  googlefonts: 
  
@@ -101,7 +101,7 @@ googlefonts:
 chulapa-skin: 
   skin   : towards
   vars: 
-    font-family-base: "Lato"
+    font-family-base: "Montserrat"
 
 
 # D. Jekyll Defaults and collections: see https://jekyllrb.com/
