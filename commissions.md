@@ -1,6 +1,6 @@
 ---
 layout: landingpage
-title: Commissions
+title: <span style="font-size:175%;">Commissions</span>
 permalink: /commissions/
 subtitle: Commissioning an instrument
 excerpt: 
