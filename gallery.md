@@ -14,7 +14,7 @@ header_img: "./assets/images/violslice2.png"
 
 | :-----: | :-----: | :-----: |
 |  [Violin after Stradivari](/gallery/violin) | [Terz Guitar after Stauffer](/gallery/terz) | [Steel String Guitar](/gallery/gsmini) |
-| <a href="/gallery/violin"><img src="/assets/images/gallery/violin/top3.jpg" height="100"></a> | <a href="/gallery/terz"><img src="/assets/images/gallery/terz/back2.jpg"  height="220"></a> | <a href="/gallery/gsmini"><img src="/assets/images/gallery/gsmini/top2.jpg" height="230"></a> |
+| <a href="/gallery/violin"><img src="/assets/images/gallery/violin/top3.jpg" width="330"></a> | <a href="/gallery/terz"><img src="/assets/images/gallery/terz/back2.jpg"  width="340"></a> | <a href="/gallery/gsmini"><img src="/assets/images/gallery/gsmini/top2.jpg" width="400"></a> |
 
 
 
