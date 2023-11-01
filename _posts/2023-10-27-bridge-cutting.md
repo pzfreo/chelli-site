@@ -1,6 +1,6 @@
 ---
 layout: landingpage
-title:  "Bridge making and fitting for a bass viol"
+title:  Bridge making and fitting for a bass viol
 header_type: hero
 header_img:   "./assets/images/purfling-slice.jpg"
 date:   2023-10-24 15:20:35 +0100
@@ -8,6 +8,7 @@ categories: viol setup violadagamba
 excerpt_separator: <!--more-->
 ---
 
+## Bridge making and fitting for a bass viol
 
 As part of the [setup of the bass viol](/viol/setup/violadagamba/2023/10/24/setting-up-bass-viol.html) I've been cutting and fitting a bridge. 
 
