@@ -14,4 +14,4 @@ The viol has flamed maple back and sides with double purfling and a bent front m
 
 For sale: £5000
 
-{% include album.html albumname="meares" %}
+{% include album2.html albumname="meares" %}
