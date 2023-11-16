@@ -17,4 +17,4 @@ The sound of this instrument is warm and mellow. The small size of this guitar m
 
 For sale: £850
 
-{% include album.html albumname="terz" %}
+{% include album2.html albumname="terz" %}

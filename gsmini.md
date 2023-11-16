@@ -12,4 +12,4 @@ This guitar is a joy to hold and play. With a short scale length (597mm) and sma
 
 For sale: £1500
 
-{% include album.html albumname="terz" %}
+{% include album2.html albumname="terz" %}
