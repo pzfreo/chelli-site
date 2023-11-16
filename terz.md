@@ -15,4 +15,6 @@ The neck has a classic V joint for the neck and the neck angle is adjustable all
 
 The sound of this instrument is warm and mellow. The small size of this guitar makes it a joy to play.
 
+For sale: £850
+
 {% include album.html albumname="terz" %}

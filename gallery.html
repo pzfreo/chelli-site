@@ -1,0 +1,52 @@
+---
+layout: landingpage
+title: Gallery
+permalink: /gallery/
+subtitle: Handcrafted instruments from Paul Fremantle
+excerpt: 
+header_type: hero
+header_img: "./assets/images/violslice2.png"
+---
+
+<!-- <link type="text/css" rel="stylesheet" href="/assets/public/lightgallery/css/lightgallery.css" /> -->
+<!-- <script src="/assets/public/lightgallery/js/lightgallery.min.js"></script>
+<script src="/assets/public/lightgallery/js/lg-zoom.min.js"></script>
+<script src="/assets/public/lightgallery/js/lg-thumbnail.min.js"></script>
+<script src="/assets/public/jquery-3.7.1.min.js"></script> -->
+<script src="/assets/public/masonry.pkgd.min.js"></script>
+<script src="/assets/public/imagesloaded.pkgd.min.js"></script>
+
+<h4>Click on each image to see more</h4>
+
+<div id="masonry">
+    <div>
+        <a href="/gallery/meares" class="image-item"><img style="margin-bottom: 5px;" src="/thumbnails/gallery/meares/hero.jpg"/><p>Bass Viol after Richard Meares</p></a>
+    </div>
+    <div>
+        <a href="/gallery/violin" class="image-item"><img style="margin-bottom: 5px;" src="/thumbnails/gallery/violin/hero.jpg"/><p>Violin after Stradivari</p></a>
+    </div>
+    <div>
+        <a href="/gallery/terz" class="image-item"><img style="margin-bottom: 5px;" src="/thumbnails/gallery/terz/hero.jpg"/><p>Terz Guitar after Stauffer</p></a>
+    </div>
+    <div>
+        <a href="/gallery/gsmini" class="image-item"><img style="margin-bottom: 5px;" src="/thumbnails/gallery/gsmini/hero.jpg"/><p>Steel String Guitar - GS Mini</p></a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+  
+    
+    var elem = document.getElementById('masonry');
+    var msnry = new Masonry( elem, {
+        itemSelector: '.image-item',
+        columnWidth: 200
+    });
+
+    imagesLoaded(elem, () => msnry.layout());
+    
+</script>
+
+
+
