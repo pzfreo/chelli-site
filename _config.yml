@@ -42,8 +42,6 @@ fa_v4_support: #Bool Add FontAwesome 4 support
 gtag_id                 :   G-J1J8NQZY8L
 # analytics_id            :
 
-
-
 # B. Navigation
 # Configure your navbar and the footer of your site
 
@@ -60,15 +58,16 @@ navbar:
   - title   : About # Label
     url     : /about # url
   - title   : Gallery # Label submenu
-    child:
-     - title: <span class="font-weight-bold">Gallery Home</span>
-       url  : /gallery
-     - title: Violin # Child label
-       url  : /gallery/violin # child url
-     - title: Terz Guitar # Child label
-       url  : /gallery/terz # child url
-     - title: Steel String Guitar
-       url  : /gallery/gsmini
+    url     : /gallery
+    # child:
+    #  - title: <span class="font-weight-bold">Gallery Home</span>
+    #    url  : /gallery
+    #  - title: Violin # Child label
+    #    url  : /gallery/violin # child url
+    #  - title: Terz Guitar # Child label
+    #    url  : /gallery/terz # child url
+    #  - title: Steel String Guitar
+    #    url  : /gallery/gsmini
   - title   : Commissions 
     url     : /commissions
   - title   : Contact Us 
@@ -140,6 +139,11 @@ defaults:
       # show_categories   : true
       # show_author       : true
       show_toc          : false
+  -
+    scope:
+      path: "gallery"
+    values:
+      gallery: true
   
 
 
@@ -195,3 +199,18 @@ sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
+# mini_magick:
+#   thumbnail:
+#       source: gallery/terz
+#       destination: thumbnails/gallery/terz
+#       resize: "320x240^"
+#       gravity: "center"
+#       extent: "320x240"
+
+mini_magick:
+    photoFolders:
+        source: gallery
+        destination: thumbnails/gallery
+        resize: "320x240^"
+        gravity: "center"
+        extent: "320x240"
