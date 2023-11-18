@@ -2,4 +2,4 @@
 cd ~/repos/chelli-site
 rm -r thumbnails/
 find gallery -type d -exec mkdir -p "thumbnails/{}" \;
-find gallery -iname '*.jpg' -exec convert -define jpeg:size=200x200 '{}' -thumbnail 40000@ -gravity center  -extent 200x200  'thumbnails/{}' \;
+find gallery -iname '*.jpg' -exec convert -define jpeg:size=300x300 '{}' -thumbnail 90000@ -gravity center  -extent 300x00  'thumbnails/{}' \;

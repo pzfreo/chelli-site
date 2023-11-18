@@ -4,13 +4,14 @@ title: Terz Guitar
 permalink: /gallery/terz
 subtitle: After Stauffer 1829
 excerpt: 
-header_type: hero
-header_img: "./assets/images/violslice2.png"
+#header_type: hero
+#header_img: "./assets/images/violslice2.png"
 ---
 
 This guitar is based  on a Terz guitar 1829 from Johann Georg Stauffer. 
 
 {% include album2.html albumname="terz" %}
+
 
 Terz guitars are tuned a third higher than standard guitars and have a correspondingly shorter scale length (570mm). There are some modern touches, such as the choice of woods, and planetary  geared tuning pegs.
 
@@ -19,6 +20,6 @@ The neck has a classic V joint for the neck and the neck angle is adjustable all
 
 The sound of this instrument is warm and mellow. The small size of this guitar makes it a joy to play.
 
-For sale: £850
+**For sale: £850**
 
 

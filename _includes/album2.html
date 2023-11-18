@@ -8,27 +8,21 @@
 <!-- <script src="/assets/public/masonry.pkgd.min.js"></script> -->
 <!-- <script src="/assets/public/imagesloaded.pkgd.min.js"></script> -->
 
-<div style="font-style: italic;">Expand gallery to fullscreen to see the best view</div>
-<div id="inline-gallery-container"  style="width: 100%;    height: 0;    padding-bottom: 65%;"></div>
+<div style="font-style: italic; font-weight: bolder; color: #D08;">Expand gallery to fullscreen to see the best view</div>
+<div id="inline-gallery-container"  style="width: 100%;    height: 0;    padding-bottom: 70%;"></div>
 
 <script type="text/javascript">
 
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
     container: lgContainer,
-    // addClass: 'lg-custom-thumbnails',
-    // appendThumbnailsTo: '.lg-outer',
     animateThumb: false,
     allowMediaOverlap: true,
     dynamic: true,
-    // Turn off hash plugin in case if you are using it
-    // as we don't want to change the url on slide change
     hash: false,
-    // Do not allow users to close the gallery
     download: false,
     thumbnail: true,
     closable: false,
-    // Add maximize icon to enlarge the gallery
     showMaximizeIcon: true,
     // Append caption inside the slide item
     // to apply some animation for the captions (Optional)
@@ -53,9 +47,7 @@ const inlineGallery = lightGallery(lgContainer, {
         ],
 });
 
-// Since we are using dynamic mode, we need to programmatically open lightGallery
 inlineGallery.openGallery();
-
         
 </script>
 
