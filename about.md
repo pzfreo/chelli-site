@@ -16,8 +16,6 @@ show_tags: false
 
 
 Paul Fremantle is the craftsman behind Chelli Strings.
-
-Before studying to make stringed instruments, Paul was a successful entrepreneur and technical lead in the enterprise software industry. 
 Paul is currently studying historic instrument making at [<span style="text-decoration: underline;">West Dean College</span>](https://www.westdean.ac.uk).
 
 The ethos of our making is that musical instruments become living things at the hands of musicians. This transformation is the heart of the relationship between musician and instrument.

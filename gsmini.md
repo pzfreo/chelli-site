@@ -10,7 +10,7 @@ excerpt:
 
 GS Mini style guitar in Indian Rosewood.
 
-{% include album2.html albumname="terz" %}
+{% include album2.html albumname="gsmini" %}
 
 This guitar is a joy to hold and play. With a short scale length (597mm) and small body, this guitar sounds bigger than it is. The top is Sitka spruce, with a carefully tuned bracing pattern. The back and sides are Indian Rosewood with inlays of quilted sapele. The rosette is also quilted sapele. The neck is walnut laminated with maple. 
 
