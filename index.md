@@ -14,3 +14,9 @@ project_links:
       icon: fab fa-instagram fa-lg
       label: Follow
 ---
+Chelli Strings crafts handmade bass viols and cellos, both modern and baroque. Paul Fremantle is the craftsman behind Chelli Strings.
+The ethos of our making is that musical instruments become living things at the hands of musicians. This transformation is the heart of the relationship between musician and instrument.
+
+For more information, please read [about us](/about) and take a look at previous instruments in the [gallery](/gallery).
+
+We also regularly update the [blog](/blog).
