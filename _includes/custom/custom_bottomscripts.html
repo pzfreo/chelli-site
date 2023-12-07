@@ -1,5 +1,17 @@
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-<script>
+<script type="module" src="/assets/public/cookieconsent-config.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1J8NQZY8L"></script>
+<script
+    type="text/plain"
+    data-category="analytics"
+    data-service="Google Analytics"
+>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J1J8NQZY8L');
+</script>
+
+<!-- <script>
 window.cookieconsent.initialise({
   "palette": {
     "popup": {
@@ -15,4 +27,4 @@ window.cookieconsent.initialise({
     "href": "/terms"
   }
 });
-</script>
+</script> -->
