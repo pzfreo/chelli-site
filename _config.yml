@@ -59,15 +59,6 @@ navbar:
     url     : /about # url
   - title   : Gallery # Label submenu
     url     : /gallery
-    # child:
-    #  - title: <span class="font-weight-bold">Gallery Home</span>
-    #    url  : /gallery
-    #  - title: Violin # Child label
-    #    url  : /gallery/violin # child url
-    #  - title: Terz Guitar # Child label
-    #    url  : /gallery/terz # child url
-    #  - title: Steel String Guitar
-    #    url  : /gallery/gsmini
   - title   : Commissions 
     url     : /commissions
   - title   : Contact Us 
@@ -135,8 +126,8 @@ defaults:
       include_on_feed   : true
       show_date         : true
       show_related      : true
-      # show_bottomnavs   : true
-      # show_sociallinks  : true
+      show_bottomnavs   : true
+      show_sociallinks  : true
       # show_comments     : true
       # show_tags         : true
       # show_categories   : true
@@ -210,10 +201,10 @@ sass:
 #       gravity: "center"
 #       extent: "320x240"
 
-mini_magick:
-    photoFolders:
-        source: gallery
-        destination: thumbnails/gallery
-        resize: "320x240^"
-        gravity: "center"
-        extent: "320x240"
+# mini_magick:
+#     photoFolders:
+#         source: gallery
+#         destination: thumbnails/gallery
+#         resize: "320x240^"
+#         gravity: "center"
+#         extent: "320x240"
