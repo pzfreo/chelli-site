@@ -9,7 +9,8 @@ excerpt:
 ---
 
 This viol is based on the famous 1660 viol by Richard Meares in the Royal College of Music, London. 
-**Video below**
+
+**Scroll down to read more and see the viol being played**
 
 {% include album2.html albumname="meares" %}
 
