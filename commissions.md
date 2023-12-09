@@ -12,7 +12,7 @@ include_on_search: true
 show_sociallinks: false
 show_tags: false
 ---
-<table><tr><td>
+<table><tr><td style="padding: 10px 50px">
 <p>
 Commissioning an instrument is a simple process. We will start with a discussion about the design of the instrument.
 </p>
@@ -37,9 +37,9 @@ Commissioning a bespoke instrument that is built to your personal requirements o
 <p/>
 <a href="/contact">Contact us</a> today to see if you would like to explore creating a new instrument.
 
-</td><td>
+</td><td style="padding: 10px 0px">
 
-<img src="/assets/images/smith-viol.jpg" height="500"/>
+<img src="/assets/images/smith-viol.jpg" height="1000"/>
 <span style="font-size:70%">Bass viol after Henry Smith with natural yew fingerboard</span>
 
 </td></tr>
