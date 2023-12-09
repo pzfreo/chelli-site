@@ -9,8 +9,7 @@ excerpt:
 ---
 
 This viol is based on the famous 1660 viol by Richard Meares in the Royal College of Music, London. 
-
-**Scroll down to read more and see the viol being played**
+You can see this being played in the [Videos](/videos) page. You can download a [datasheet](/assets/pdfs/meares-viol-datasheet.pdf) for this viol.
 
 {% include album2.html albumname="meares" %}
 
@@ -21,9 +20,9 @@ The Meares 1660 is one of the most intact 17th century viols in existence, with 
 The viol has flamed maple back and sides with double purfling and a bent front made from alpine spruce. The fingerboard and tailpiece are maple with ebony veneer. The purfling is all handmade from dyed pear and poplar. The pegs are turned from boxwood and it is strung in high twist lambs gut strings, with a wound low D string. The scale length is 707mm.
 
 **For sale: £5000**
-<br/>
 
-<iframe width="500" height="800" src="https://www.youtube.com/embed/AxsdMzfDBT0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
 
 
 

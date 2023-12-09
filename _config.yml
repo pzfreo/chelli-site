@@ -57,8 +57,10 @@ navbar:
   nav:
   - title   : About # Label
     url     : /about # url
-  - title   : Gallery # Label submenu
+  - title   : Gallery 
     url     : /gallery
+  - title   : Videos 
+    url     : /videos
   - title   : Commissions 
     url     : /commissions
   - title   : Contact Us 
