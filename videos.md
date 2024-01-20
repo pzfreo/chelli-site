@@ -13,5 +13,8 @@ Xavier playing the [bass viol after Meares](/gallery/meares/)
 <iframe width="500" height="800" src="https://www.youtube.com/embed/AxsdMzfDBT0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
+Hayleigh playing the [GS Mini Guitar](/gallery/gsmini/)
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/TfamoAySClU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
