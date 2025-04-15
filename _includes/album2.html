@@ -2,6 +2,7 @@
 <link type="text/css" rel="stylesheet" href="/assets/css/thumbnails.css" />
 <script src="/assets/public/lightgallery/js/lightgallery.min.js"></script>
 <script src="/assets/public/lightgallery/js/lg-zoom.min.js"></script>
+<script src="/assets/public/lightgallery/plugins/mediumZoom/lg-medium-zoom.min.js"></script>
 <script src="/assets/public/lightgallery/js/lg-thumbnail.min.js"></script>
 <script src="/assets/public/lightgallery/js/lg-fullscreen.min.js"></script>
 <!-- <script src="/assets/public/jquery-3.7.1.min.js"></script> -->
@@ -19,7 +20,8 @@
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
     container: lgContainer,
-    plugins: [lgMediumZoom]
+    plugins: [lgMediumZoom],
+    backgroundColor: "#d5d8dc",
     animateThumb: false,
     allowMediaOverlap: true,
     dynamic: true,
