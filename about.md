@@ -4,15 +4,19 @@ title: About
 permalink: /about/
 subtitle: Handcrafted instruments from Paul Fremantle
 excerpt: 
-header_type: hero
-header_img: "./assets/images/smith-viol-slice.jpg"
+# header_type: hero
+# header_img: "./assets/images/smith-viol-slice.jpg"
 # og_image: "./assets/images/scroll.jpg"
 include_on_search: true
 show_sociallinks: false
 show_tags: false
 ---
 
-<p style="text-align:center"><img src="/assets/images/chellilogo.png" height="250"></p>
+<!-- <p style="text-align:center"><img src="/assets/images/chellilogo.png" height="250"></p> -->
+![Paul examining a 1660 Meares bass viol at the Royal College of Music](/assets/images/paulfremantle-meares.jpg "Paul Fremantle with Meares bass viol")
+
+Paul examining a 1660 Meares bass viol at the Royal College of Music
+{: .caption}
 
 
 Paul Fremantle is the craftsman behind Chelli Strings. He is an experienced luthier with a [number of high quality instruments](/gallery) to his name.
@@ -28,7 +32,3 @@ These are our starting points on every journey to create something new.
 
 You can [<span style="text-decoration: underline;">contact us</span>](/contact).
 
-![Paul examining a 1660 Meares bass viol at the Royal College of Music](/assets/images/paulfremantle-meares.jpg "Paul Fremantle with Meares bass viol")
-
-Paul examining a 1660 Meares bass viol at the Royal College of Music
-{: .caption}
