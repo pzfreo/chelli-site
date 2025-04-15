@@ -51,7 +51,7 @@ fa_v4_support: #Bool Add FontAwesome 4 support
 navbar:
   style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
   brand:
-    title   : <span style="font-weight:bold;font-size:150%;font-family:'Mrs Saint Delafield';">Chelli Strings</span>
+    title   : <span style="font-weight:bold;font-size:200%;font-family:'Mrs Saint Delafield';">Chelli Strings</span>
     # img     : "/assets/images/chellilogo.png"
   expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
   nav:

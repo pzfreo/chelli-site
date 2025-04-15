@@ -17,10 +17,12 @@ project_links:
 <script src="/assets/public/masonry.pkgd.min.js"></script>
 <script src="/assets/public/imagesloaded.pkgd.min.js"></script>
 
+
+<!-- <img height="1000" style="margin-bottom: 5px;" src="gallery/fiddle/hero.png"/> -->
 <div id="masonry">
     <div class="image-item">
-      <img width="1000" style="margin-bottom: 5px;" src="gallery/fiddle/hero.jpg"/>
-      <p style="text-align:center;">Scottish Fiddle after Matthew Hardie c.1800</p>
+        <img src="gallery/fiddle/oldhero.png"/>
+        <p style="text-align:center;">Fiddle after Matthew Hardie c.1800</p>
     </div>
 </div>
 
@@ -36,7 +38,7 @@ project_links:
     var elem = document.getElementById('masonry');
     var msnry = new Masonry( elem, {
         itemSelector: '.image-item',
-        columnWidth: 1000
+        columnWidth: 2000
     });
 
     imagesLoaded(elem, () => msnry.layout());
