@@ -12,11 +12,21 @@ show_sociallinks: false
 show_tags: false
 ---
 
+<script src="/assets/public/masonry.pkgd.min.js"></script>
+<script src="/assets/public/imagesloaded.pkgd.min.js"></script>
+
+<a href="/gallery/working">Click to expand</a>
+<a href="/gallery/working" class="image-item">
+    <img style="margin-bottom: 5px;" src="/gallery/working/hero.jpg"/>
+</a>
+Paul in the workshop. Photos by kind permission of Oliver Cameron-Swan
+{: .caption}
+
 <!-- <p style="text-align:center"><img src="/assets/images/chellilogo.png" height="250"></p> -->
-![Paul examining a 1660 Meares bass viol at the Royal College of Music](/assets/images/paulfremantle-meares.jpg "Paul Fremantle with Meares bass viol")
+<!-- ![Paul examining a 1660 Meares bass viol at the Royal College of Music](/assets/images/paulfremantle-meares.jpg "Paul Fremantle with Meares bass viol")
 
 Paul examining a 1660 Meares bass viol at the Royal College of Music
-{: .caption}
+ -->
 
 
 Paul Fremantle is the craftsman behind Chelli Strings. He is an experienced luthier with a [number of high quality instruments](/gallery) to his name.
@@ -32,3 +42,16 @@ These are our starting points on every journey to create something new.
 
 You can [<span style="text-decoration: underline;">contact us</span>](/contact).
 
+<script type="text/javascript">
+
+  
+    
+    var elem = document.getElementById('masonry');
+    var msnry = new Masonry( elem, {
+        itemSelector: '.image-item',
+        columnWidth: 600
+    });
+
+    imagesLoaded(elem, () => msnry.layout());
+    
+</script>

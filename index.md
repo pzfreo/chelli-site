@@ -21,7 +21,7 @@ project_links:
 <!-- <img height="1000" style="margin-bottom: 5px;" src="gallery/fiddle/hero.png"/> -->
 <div id="masonry">
     <div class="image-item">
-        <img src="gallery/fiddle/oldhero.png"/>
+        <img src="gallery/fiddle/hero.png"/>
         <p style="text-align:center;">Fiddle after Matthew Hardie c.1800</p>
     </div>
 </div>

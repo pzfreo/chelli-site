@@ -3,13 +3,14 @@
 <script src="/assets/public/lightgallery/js/lightgallery.min.js"></script>
 <script src="/assets/public/lightgallery/js/lg-zoom.min.js"></script>
 <script src="/assets/public/lightgallery/plugins/mediumZoom/lg-medium-zoom.min.js"></script>
+<script src="/assets/public/lightgallery/plugins/autoplay/lg-autoplay.min.js"></script>
 <script src="/assets/public/lightgallery/js/lg-thumbnail.min.js"></script>
 <script src="/assets/public/lightgallery/js/lg-fullscreen.min.js"></script>
 <!-- <script src="/assets/public/jquery-3.7.1.min.js"></script> -->
 <!-- <script src="/assets/public/masonry.pkgd.min.js"></script> -->
 <!-- <script src="/assets/public/imagesloaded.pkgd.min.js"></script> -->
 
-<div style="font-weight: bolder;"><a href="/gallery">Back to main gallery</a></div>
+<div style="font-weight: bolder;"><a href="javascript:history.back()">Back to main gallery</a></div>
 <hr>
 
 <div style="font-style: italic; font-weight: bolder; color: #D08;">Expand gallery to fullscreen to see the best view</div>
@@ -20,8 +21,8 @@
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
     container: lgContainer,
-    plugins: [lgMediumZoom],
-    backgroundColor: "#d5d8dc",
+    // plugins: [lgMediumZoom],
+    backgroundColor: "#5d6d7e",
     animateThumb: false,
     allowMediaOverlap: true,
     dynamic: true,
