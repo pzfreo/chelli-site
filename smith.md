@@ -12,6 +12,6 @@ This viol is based on the Henry Smith viol from 1637. This was my first bass vio
 
 {% include album2.html albumname="smith" %}
 
-The viol has flamed maple back and sides with a single black-white-black purfling and a bent front made from alpine spruce. The fingerboard and tailpiece are yew, and the heartwood is used to create a modern take on an age old instrument. The scale length is 690mm.
+The viol has flamed maple back and sides with a single black-white-black purfling and a bent front made from alpine spruce. The fingerboard and tailpiece are yew, and the heartwood is used to create a modern take on an age old instrument. The scale length is 690mm. This viol has a lovely sad sound and great response.
 
-
+**For sale: £2,500 ** 

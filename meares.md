@@ -19,6 +19,8 @@ The Meares 1660 is one of the most intact 17th century viols in existence, with 
 
 The viol has flamed maple back and sides with double purfling and a bent front made from alpine spruce. The fingerboard and tailpiece are maple with ebony veneer. The purfling is all handmade from dyed pear and poplar. The pegs are turned from boxwood and it is strung in high twist lambs gut strings, with a wound low D string. The scale length is 707mm.
 
+I have had excellent feedback from musicians about this viol: they have commented about its balance across the strings, the gorgeous timbre and feel of the instrument.
+
 **For sale: £4,300**
 
 
