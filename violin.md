@@ -15,3 +15,4 @@ This violin was made in 2016 and was my first bowed instrument.
 
 Based on the [Titian](https://tarisio.com/cozio-archive/property/?ID=41393), this is a rich sounding instrument. It is made in the classical approach, with a maple back, sides, and neck and an alpine spruce front. Not for sale.
 
+**Not for sale**
