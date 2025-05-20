@@ -21,7 +21,7 @@ The viol has flamed maple back and sides with double purfling and a bent front m
 
 I have had excellent feedback from musicians about this viol: they have commented about its balance across the strings, the gorgeous timbre and feel of the instrument.
 
-**For sale: £4,300**
+**SOLD**
 
 
 
