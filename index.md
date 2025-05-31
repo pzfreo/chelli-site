@@ -28,7 +28,7 @@ project_links:
 
 <br/>
 <p style="text-align:center;font-size:150%" >
- <a href="/gallery">view and buy</a> /  <a href="/commissions.html">commission a bespoke instrument</a> / <a href="https://paulfremantleluthier.substack.com/archive">subscribe to thee blog</a> / <a href="/about">about</a> 
+ <a href="/gallery">view and buy</a> /  <a href="/commissions.html">commission</a> / <a href="https://paulfremantleluthier.substack.com/archive">blog</a> / <a href="/about">about</a> 
 </p>
 
 <script type="text/javascript">
