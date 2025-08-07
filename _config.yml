@@ -195,18 +195,8 @@ sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
-# mini_magick:
-#   thumbnail:
-#       source: gallery/terz
-#       destination: thumbnails/gallery/terz
-#       resize: "320x240^"
-#       gravity: "center"
-#       extent: "320x240"
-
-# mini_magick:
-#     photoFolders:
-#         source: gallery
-#         destination: thumbnails/gallery
-#         resize: "320x240^"
-#         gravity: "center"
-#         extent: "320x240"
+mini_magick:
+  gallery:
+    source: "gallery"
+    destination: "thumbnails/gallery"
+    resize: "300x"
