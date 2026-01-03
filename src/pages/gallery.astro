@@ -5,9 +5,51 @@ import { getCollection } from 'astro:content';
 
 const instruments = await getCollection('instruments');
 const sortedInstruments = instruments.sort((a, b) => a.data.order - b.data.order);
+
+// Get hero images from all instruments
+const heroImages = sortedInstruments.map(i => ({
+  src: i.data.featuredImage,
+  title: i.data.title,
+  slug: i.slug
+}));
 ---
 
 <BaseLayout title="Gallery" description="Browse handcrafted stringed instruments - viols, violins, fiddles, and guitars">
+  <!-- Rotating Hero -->
+  <section class="relative h-[50vh] min-h-[400px] max-h-[600px] overflow-hidden -mx-4 sm:-mx-6">
+    <div id="hero-carousel" class="absolute inset-0">
+      {heroImages.map((image, index) => (
+        <a
+          href={`/instruments/${image.slug}`}
+          class="hero-slide absolute inset-0 transition-opacity duration-1000"
+          style={index === 0 ? '' : 'opacity: 0;'}
+          data-index={index}
+        >
+          <img
+            src={image.src}
+            alt={image.title}
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div class="absolute bottom-8 left-8 right-8">
+            <p class="text-white text-xl md:text-2xl font-serif">{image.title}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Progress indicators -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      {heroImages.map((_, index) => (
+        <button
+          class="hero-dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300"
+          data-index={index}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  </section>
+
   <section class="py-12 lg:py-20">
     <div class="container-wide">
       <div class="text-center mb-12">
@@ -57,6 +99,7 @@ const sortedInstruments = instruments.sort((a, b) => a.data.order - b.data.order
 </BaseLayout>
 
 <script>
+  // Filter functionality
   const filterButtons = document.querySelectorAll('.filter-btn');
   const grid = document.getElementById('instrument-grid');
   const emptyState = document.getElementById('empty-state');
@@ -95,7 +138,6 @@ const sortedInstruments = instruments.sort((a, b) => a.data.order - b.data.order
       const filterType = button.getAttribute('data-filter') as 'type' | 'status';
       const filterValue = button.getAttribute('data-value') || 'all';
 
-      // Update active state for this filter group
       filterButtons.forEach((btn) => {
         if (btn.getAttribute('data-filter') === filterType) {
           btn.classList.remove('active');
@@ -103,9 +145,60 @@ const sortedInstruments = instruments.sort((a, b) => a.data.order - b.data.order
       });
       button.classList.add('active');
 
-      // Update filter state
       activeFilters[filterType] = filterValue;
       applyFilters();
     });
   });
+
+  // Hero carousel
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let currentSlide = 0;
+  let interval: ReturnType<typeof setInterval>;
+
+  function showSlide(index: number) {
+    slides.forEach((slide, i) => {
+      (slide as HTMLElement).style.opacity = i === index ? '1' : '0';
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-white', i === index);
+      dot.classList.toggle('bg-white/50', i !== index);
+      dot.classList.toggle('w-4', i === index);
+      dot.classList.toggle('w-2', i !== index);
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  function startCarousel() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function resetCarousel() {
+    clearInterval(interval);
+    startCarousel();
+  }
+
+  // Initialize
+  if (slides.length > 0) {
+    showSlide(0);
+    startCarousel();
+
+    // Click handlers for dots
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index') || '0');
+        showSlide(index);
+        resetCarousel();
+      });
+    });
+
+    // Pause on hover
+    const carousel = document.getElementById('hero-carousel');
+    carousel?.addEventListener('mouseenter', () => clearInterval(interval));
+    carousel?.addEventListener('mouseleave', startCarousel);
+  }
 </script>
