@@ -16,7 +16,7 @@
   }
 
   body {
-    @apply bg-offwhite text-charcoal antialiased pl-4 pr-4 sm:pl-6 sm:pr-6;
+    @apply bg-offwhite text-charcoal antialiased pl-4 pr-4 sm:pl-6 sm:pr-6 overflow-x-hidden;
   }
 
   h1, h2, h3, h4 {
