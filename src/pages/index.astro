@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { navLinks } from '../lib/labels';
 
 const instruments = await getCollection('instruments');
 const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3);
@@ -14,11 +15,9 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
         Chelli Strings
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-white" style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
-        <li><a href="/gallery" class="hover:text-warmgold">Gallery</a></li>
-        <li><a href="/about" class="hover:text-warmgold">About</a></li>
-        <li><a href="/commissions" class="hover:text-warmgold">Commissions</a></li>
-        <li><a href="/videos" class="hover:text-warmgold">Videos</a></li>
-        <li><a href="/contact" class="hover:text-warmgold">Contact</a></li>
+        {navLinks.map(link => (
+          <li><a href={link.href} class="hover:text-warmgold">{link.label}</a></li>
+        ))}
       </ul>
       <button id="mobile-menu-btn-home" class="md:hidden p-2 text-white" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,7 +32,7 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
     <div class="absolute inset-0">
       <img
         src="/gallery/fiddle/hero.png"
-        alt="Handcrafted fiddle"
+        alt="Close-up of a handcrafted fiddle showing the warm wood grain and expert craftsmanship of the scroll and pegs"
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
@@ -117,14 +116,3 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn-home');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  });
-</script>

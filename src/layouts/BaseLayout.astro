@@ -1,4 +1,6 @@
 ---
+import { navLinks } from '../lib/labels';
+
 interface Props {
   title: string;
   description?: string;
@@ -42,6 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/mrssaintdelafield/v13/v6-IGZDIOVXH9xtmTZfRagunqBw5WD1MLmom3g.woff2" as="font" type="font/woff2" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen flex flex-col">
@@ -52,11 +55,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             Chelli Strings
           </a>
           <ul class="hidden md:flex items-center gap-8 text-sm tracking-wide">
-            <li><a href="/gallery" class="hover:text-warmgold">Gallery</a></li>
-            <li><a href="/about" class="hover:text-warmgold">About</a></li>
-            <li><a href="/commissions" class="hover:text-warmgold">Commissions</a></li>
-            <li><a href="/videos" class="hover:text-warmgold">Videos</a></li>
-            <li><a href="/contact" class="hover:text-warmgold">Contact</a></li>
+            {navLinks.map(link => (
+              <li><a href={link.href} class="hover:text-warmgold">{link.label}</a></li>
+            ))}
           </ul>
           <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,11 +80,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </button>
         </div>
         <nav class="flex flex-col gap-6 text-2xl">
-          <a href="/gallery" class="hover:text-warmgold">Gallery</a>
-          <a href="/about" class="hover:text-warmgold">About</a>
-          <a href="/commissions" class="hover:text-warmgold">Commissions</a>
-          <a href="/videos" class="hover:text-warmgold">Videos</a>
-          <a href="/contact" class="hover:text-warmgold">Contact</a>
+          {navLinks.map(link => (
+            <a href={link.href} class="hover:text-warmgold">{link.label}</a>
+          ))}
         </nav>
       </div>
     </div>
@@ -125,19 +124,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </footer>
 
     <script>
+      // Handle both regular and homepage mobile menu buttons
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuBtnHome = document.getElementById('mobile-menu-btn-home');
       const mobileMenuClose = document.getElementById('mobile-menu-close');
       const mobileMenu = document.getElementById('mobile-menu');
 
-      mobileMenuBtn?.addEventListener('click', () => {
+      function openMobileMenu() {
         mobileMenu?.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-      });
+      }
 
-      mobileMenuClose?.addEventListener('click', () => {
+      function closeMobileMenu() {
         mobileMenu?.classList.add('hidden');
         document.body.style.overflow = '';
-      });
+      }
+
+      mobileMenuBtn?.addEventListener('click', openMobileMenu);
+      mobileMenuBtnHome?.addEventListener('click', openMobileMenu);
+      mobileMenuClose?.addEventListener('click', closeMobileMenu);
     </script>
   </body>
 </html>
