@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InstrumentCard from '../components/InstrumentCard.astro';
+import { getCollection } from 'astro:content';
+
+const instruments = await getCollection('instruments');
+const sortedInstruments = instruments.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Gallery" description="Browse handcrafted stringed instruments - viols, violins, fiddles, and guitars">
+  <section class="py-12 lg:py-20">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h1 class="font-serif text-4xl lg:text-5xl mb-4">Gallery</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Each instrument is handcrafted with care, combining traditional techniques with a deep respect for historical models.
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12 border-b border-gray-200 pb-6">
+        <div class="flex flex-wrap justify-center gap-2">
+          <button class="filter-btn active" data-filter="type" data-value="all">All</button>
+          <button class="filter-btn" data-filter="type" data-value="viol">Viols</button>
+          <button class="filter-btn" data-filter="type" data-value="violin">Violins</button>
+          <button class="filter-btn" data-filter="type" data-value="fiddle">Fiddles</button>
+          <button class="filter-btn" data-filter="type" data-value="guitar">Guitars</button>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2">
+          <button class="filter-btn active" data-filter="status" data-value="all">All</button>
+          <button class="filter-btn" data-filter="status" data-value="for-sale">For Sale</button>
+          <button class="filter-btn" data-filter="status" data-value="sold">Sold</button>
+        </div>
+      </div>
+
+      <!-- Instrument Grid -->
+      <div id="instrument-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12">
+        {sortedInstruments.map((instrument) => (
+          <InstrumentCard
+            title={instrument.data.title}
+            subtitle={instrument.data.subtitle}
+            type={instrument.data.type}
+            status={instrument.data.status}
+            price={instrument.data.price}
+            featuredImage={instrument.data.featuredImage}
+            slug={instrument.slug}
+          />
+        ))}
+      </div>
+
+      <!-- Empty state -->
+      <div id="empty-state" class="hidden text-center py-20">
+        <p class="text-gray-500">No instruments match your current filters.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const grid = document.getElementById('instrument-grid');
+  const emptyState = document.getElementById('empty-state');
+  const cards = grid?.querySelectorAll('[data-type]');
+
+  let activeFilters = {
+    type: 'all',
+    status: 'all'
+  };
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    cards?.forEach((card) => {
+      const cardType = card.getAttribute('data-type');
+      const cardStatus = card.getAttribute('data-status');
+
+      const typeMatch = activeFilters.type === 'all' || cardType === activeFilters.type;
+      const statusMatch = activeFilters.status === 'all' || cardStatus === activeFilters.status;
+
+      if (typeMatch && statusMatch) {
+        (card as HTMLElement).style.display = '';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (emptyState) {
+      emptyState.classList.toggle('hidden', visibleCount > 0);
+    }
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filterType = button.getAttribute('data-filter') as 'type' | 'status';
+      const filterValue = button.getAttribute('data-value') || 'all';
+
+      // Update active state for this filter group
+      filterButtons.forEach((btn) => {
+        if (btn.getAttribute('data-filter') === filterType) {
+          btn.classList.remove('active');
+        }
+      });
+      button.classList.add('active');
+
+      // Update filter state
+      activeFilters[filterType] = filterValue;
+      applyFilters();
+    });
+  });
+</script>

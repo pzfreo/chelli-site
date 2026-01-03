@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const instruments = await getCollection('instruments');
+const forSale = instruments.filter(i => i.data.status === 'for-sale');
+---
+
+<BaseLayout title="Contact" description="Get in touch about instruments, commissions, or any questions.">
+  <section class="py-12 lg:py-20">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h1 class="font-serif text-4xl lg:text-5xl mb-4">Get in Touch</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Whether you're interested in an instrument, would like to discuss a commission, or just have a question, I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto">
+        <!-- Contact Form -->
+        <div>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thanks"
+            class="space-y-6"
+          >
+            <!-- Honeypot field for spam protection -->
+            <p class="hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 focus:border-charcoal focus:ring-1 focus:ring-charcoal outline-none transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 focus:border-charcoal focus:ring-1 focus:ring-charcoal outline-none transition-colors"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium mb-2">Phone (optional)</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="w-full px-4 py-3 border border-gray-300 focus:border-charcoal focus:ring-1 focus:ring-charcoal outline-none transition-colors"
+                placeholder="+44 ..."
+              />
+            </div>
+
+            {forSale.length > 0 && (
+              <div>
+                <label for="instrument" class="block text-sm font-medium mb-2">Interested in (optional)</label>
+                <select
+                  id="instrument"
+                  name="instrument"
+                  class="w-full px-4 py-3 border border-gray-300 focus:border-charcoal focus:ring-1 focus:ring-charcoal outline-none transition-colors bg-white"
+                >
+                  <option value="">Select an instrument...</option>
+                  {forSale.map((instrument) => (
+                    <option value={instrument.data.title}>{instrument.data.title}</option>
+                  ))}
+                  <option value="Commission">Custom Commission</option>
+                  <option value="Other">Other / General Enquiry</option>
+                </select>
+              </div>
+            )}
+
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 border border-gray-300 focus:border-charcoal focus:ring-1 focus:ring-charcoal outline-none transition-colors resize-y"
+                placeholder="Tell me about your interest or ask any questions..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="lg:pl-8">
+          <div class="bg-cream p-8 lg:p-10">
+            <h2 class="font-serif text-2xl mb-6">Direct Contact</h2>
+
+            <div class="space-y-6">
+              <div>
+                <p class="text-sm uppercase tracking-wider text-gray-500 mb-1">Email</p>
+                <a href="mailto:paul@fremantle.org" class="text-lg hover:text-warmgold transition-colors">
+                  paul@fremantle.org
+                </a>
+              </div>
+
+              <div>
+                <p class="text-sm uppercase tracking-wider text-gray-500 mb-1">Phone</p>
+                <a href="tel:+447740199729" class="text-lg hover:text-warmgold transition-colors">
+                  +44 7740 199 729
+                </a>
+              </div>
+
+              <div>
+                <p class="text-sm uppercase tracking-wider text-gray-500 mb-1">Location</p>
+                <p class="text-lg">Near Chichester, West Sussex, UK</p>
+              </div>
+
+              <div>
+                <p class="text-sm uppercase tracking-wider text-gray-500 mb-1">Follow</p>
+                <div class="flex gap-4 mt-2">
+                  <a href="https://www.instagram.com/chellistrings" target="_blank" rel="noopener" class="text-gray-600 hover:text-warmgold transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  </a>
+                  <a href="https://paulfremantleluthier.substack.com" target="_blank" rel="noopener" class="text-gray-600 hover:text-warmgold transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-8 border-gray-300" />
+
+            <p class="text-gray-600 text-sm">
+              I typically respond within one working day. For urgent matters, please call directly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

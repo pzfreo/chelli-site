@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const instruments = await getCollection('instruments');
+const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3);
+---
+
+<BaseLayout title="Handcrafted Stringed Instruments" description="Handcrafted stringed instruments from Sussex, England. Viols, baroque violins, fiddles, and guitars made with traditional techniques.">
+  <slot name="header">
+    <!-- Custom minimal header for homepage -->
+    <header class="absolute top-0 left-0 right-0 z-10 py-6 px-6 lg:px-12">
+      <nav class="flex items-center justify-between max-w-7xl mx-auto">
+        <a href="/" class="font-script text-3xl text-white hover:text-warmgold drop-shadow-lg">
+          Chelli Strings
+        </a>
+        <ul class="hidden md:flex items-center gap-8 text-sm tracking-wide text-white">
+          <li><a href="/gallery" class="hover:text-warmgold drop-shadow">Gallery</a></li>
+          <li><a href="/about" class="hover:text-warmgold drop-shadow">About</a></li>
+          <li><a href="/commissions" class="hover:text-warmgold drop-shadow">Commissions</a></li>
+          <li><a href="/videos" class="hover:text-warmgold drop-shadow">Videos</a></li>
+          <li><a href="/contact" class="hover:text-warmgold drop-shadow">Contact</a></li>
+        </ul>
+        <button id="mobile-menu-btn-home" class="md:hidden p-2 text-white" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+  </slot>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center">
+    <div class="absolute inset-0">
+      <img
+        src="/gallery/fiddle/hero.png"
+        alt="Handcrafted fiddle"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+    </div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto animate-fade-in">
+      <p class="text-sm uppercase tracking-[0.3em] mb-4 opacity-90">Sussex, England</p>
+      <h1 class="font-script text-5xl md:text-7xl lg:text-8xl mb-6">Chelli Strings</h1>
+      <p class="text-lg md:text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+        Handcrafted viols, baroque violins, fiddles, and guitars made with traditional techniques and a deep respect for historical models.
+      </p>
+      <a href="/gallery" class="inline-block border border-white text-white px-8 py-4 hover:bg-white hover:text-charcoal transition-colors duration-300">
+        View Gallery
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white opacity-75" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Featured Instruments -->
+  {forSale.length > 0 && (
+    <section class="py-20 lg:py-32">
+      <div class="container-wide">
+        <div class="text-center mb-16">
+          <p class="text-sm uppercase tracking-[0.2em] text-gray-500 mb-4">Currently Available</p>
+          <h2 class="font-serif text-3xl lg:text-4xl">Instruments for Sale</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+          {forSale.map((instrument) => (
+            <a href={`/instruments/${instrument.slug}`} class="group block">
+              <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-4">
+                <img
+                  src={instrument.data.featuredImage}
+                  alt={instrument.data.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="font-serif text-xl group-hover:text-warmgold transition-colors">{instrument.data.title}</h3>
+              <p class="text-gray-600">{instrument.data.subtitle}</p>
+              {instrument.data.price && (
+                <p class="mt-2 font-medium">£{instrument.data.price.toLocaleString()}</p>
+              )}
+            </a>
+          ))}
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="/gallery" class="btn">View All Instruments</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- About Teaser -->
+  <section class="py-20 lg:py-32 bg-cream">
+    <div class="container-narrow text-center">
+      <h2 class="font-serif text-3xl lg:text-4xl mb-6">The Maker</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-8">
+        I'm Paul Fremantle, a luthier based near Chichester in West Sussex. Each instrument I create combines historical accuracy with careful craftsmanship, whether it's a 17th-century viol or a baroque violin.
+      </p>
+      <a href="/about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Commission CTA -->
+  <section class="py-20 lg:py-32">
+    <div class="container-narrow text-center">
+      <p class="text-sm uppercase tracking-[0.2em] text-gray-500 mb-4">Bespoke Instruments</p>
+      <h2 class="font-serif text-3xl lg:text-4xl mb-6">Commission a Custom Instrument</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+        Looking for something specific? I welcome commissions for viols, baroque violins, fiddles, and guitars. Let's discuss your vision.
+      </p>
+      <a href="/commissions" class="btn btn-primary">Start a Commission</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn-home');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+</script>

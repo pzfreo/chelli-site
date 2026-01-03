@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSwipeGallery from '../components/PhotoSwipeGallery.astro';
+
+const workshopImages = [
+  '/gallery/working/hero.jpg',
+  '/gallery/working/DSC_2391.jpg',
+  '/gallery/working/DSC_2412.jpg',
+  '/gallery/working/DSC_2427.jpg',
+];
+---
+
+<BaseLayout title="About" description="Paul Fremantle is the craftsman behind Chelli Strings, an experienced luthier creating handcrafted stringed instruments.">
+  <section class="py-12 lg:py-20">
+    <div class="container-wide">
+      <!-- Hero Section -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-gray-500 mb-4">The Maker</p>
+          <h1 class="font-serif text-4xl lg:text-5xl mb-6">Paul Fremantle</h1>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Paul Fremantle is the craftsman behind Chelli Strings. He is an experienced luthier with a number of high quality instruments to his name.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Paul gained a distinction in his FdA in historic instrument making at <a href="https://www.westdean.ac.uk" target="_blank" rel="noopener" class="text-warmgold hover:underline">West Dean College</a>.
+          </p>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden bg-gray-100">
+          <img
+            src="/gallery/working/hero.jpg"
+            alt="Paul Fremantle in the workshop"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Philosophy Section -->
+      <div class="max-w-3xl mx-auto text-center mb-20">
+        <h2 class="font-serif text-3xl mb-6">Philosophy</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          The ethos of my making is that musical instruments become living things at the hands of musicians. This transformation is the heart of the relationship between musician and instrument.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          The start of this journey begins when an instrument is made. Instruments that are bespoke and crafted with love and attention have an aura that makes each handcrafted instrument unique.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          It is my vision to build instruments that can last generations: made with care and attention; using only wonderful wood; designed to play fluidly and sound rich and timbral.
+        </p>
+      </div>
+
+      <!-- Workshop Photos -->
+      <div class="mb-20">
+        <h2 class="font-serif text-2xl text-center mb-8">In the Workshop</h2>
+        <PhotoSwipeGallery images={workshopImages} title="Workshop photos" />
+        <p class="text-sm text-gray-500 text-center mt-4">
+          Photos by kind permission of Oliver Cameron-Swan
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <h2 class="font-serif text-2xl mb-4">Ready to Create Something Special?</h2>
+        <p class="text-gray-600 mb-8 max-w-xl mx-auto">
+          If you want to commission an instrument, start by thinking what excites you about a bespoke instrument. What is your vision?
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/commissions" class="btn btn-primary">Commission an Instrument</a>
+          <a href="/contact" class="btn">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
