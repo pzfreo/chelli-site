@@ -9,12 +9,12 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
 <BaseLayout title="Handcrafted Stringed Instruments" description="Handcrafted stringed instruments from Sussex, England. Viols, baroque violins, fiddles, and guitars made with traditional techniques.">
   <slot name="header">
     <!-- Custom minimal header for homepage -->
-    <header class="absolute top-0 left-0 right-0 z-10 py-6 px-6 lg:px-12">
+    <header class="absolute top-0 left-0 right-0 z-20 py-6 px-6 lg:px-12">
       <nav class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="/" class="font-script text-3xl text-white hover:text-warmgold">
+        <a href="/" class="font-script text-3xl text-white hover:text-warmgold" style="text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
           Chelli Strings
         </a>
-        <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-white">
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-white" style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
           <li><a href="/gallery" class="hover:text-warmgold">Gallery</a></li>
           <li><a href="/about" class="hover:text-warmgold">About</a></li>
           <li><a href="/commissions" class="hover:text-warmgold">Commissions</a></li>
@@ -31,7 +31,7 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
   </slot>
 
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center">
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center -mx-4 sm:-mx-6">
     <div class="absolute inset-0">
       <img
         src="/gallery/fiddle/hero.png"
