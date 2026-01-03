@@ -11,15 +11,15 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
     <!-- Custom minimal header for homepage -->
     <header class="absolute top-0 left-0 right-0 z-10 py-6 px-6 lg:px-12">
       <nav class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="/" class="font-script text-3xl text-white hover:text-warmgold drop-shadow-lg">
+        <a href="/" class="font-script text-3xl text-white hover:text-warmgold">
           Chelli Strings
         </a>
-        <ul class="hidden md:flex items-center gap-8 text-sm tracking-wide text-white">
-          <li><a href="/gallery" class="hover:text-warmgold drop-shadow">Gallery</a></li>
-          <li><a href="/about" class="hover:text-warmgold drop-shadow">About</a></li>
-          <li><a href="/commissions" class="hover:text-warmgold drop-shadow">Commissions</a></li>
-          <li><a href="/videos" class="hover:text-warmgold drop-shadow">Videos</a></li>
-          <li><a href="/contact" class="hover:text-warmgold drop-shadow">Contact</a></li>
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-white">
+          <li><a href="/gallery" class="hover:text-warmgold">Gallery</a></li>
+          <li><a href="/about" class="hover:text-warmgold">About</a></li>
+          <li><a href="/commissions" class="hover:text-warmgold">Commissions</a></li>
+          <li><a href="/videos" class="hover:text-warmgold">Videos</a></li>
+          <li><a href="/contact" class="hover:text-warmgold">Contact</a></li>
         </ul>
         <button id="mobile-menu-btn-home" class="md:hidden p-2 text-white" aria-label="Open menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
