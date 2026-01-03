@@ -7,28 +7,26 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
 ---
 
 <BaseLayout title="Handcrafted Stringed Instruments" description="Handcrafted stringed instruments from Sussex, England. Viols, baroque violins, fiddles, and guitars made with traditional techniques.">
-  <slot name="header">
-    <!-- Custom minimal header for homepage -->
-    <header class="absolute top-0 left-0 right-0 z-20 py-6 px-6 lg:px-12">
-      <nav class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="/" class="font-script text-3xl text-white hover:text-warmgold" style="text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-          Chelli Strings
-        </a>
-        <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-white" style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
-          <li><a href="/gallery" class="hover:text-warmgold">Gallery</a></li>
-          <li><a href="/about" class="hover:text-warmgold">About</a></li>
-          <li><a href="/commissions" class="hover:text-warmgold">Commissions</a></li>
-          <li><a href="/videos" class="hover:text-warmgold">Videos</a></li>
-          <li><a href="/contact" class="hover:text-warmgold">Contact</a></li>
-        </ul>
-        <button id="mobile-menu-btn-home" class="md:hidden p-2 text-white" aria-label="Open menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </nav>
-    </header>
-  </slot>
+  <!-- Custom transparent header for homepage -->
+  <header slot="header" class="absolute top-0 left-0 right-0 z-20 py-6 px-6 lg:px-12">
+    <nav class="flex items-center justify-between max-w-7xl mx-auto">
+      <a href="/" class="font-script text-3xl text-white hover:text-warmgold" style="text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+        Chelli Strings
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-white" style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
+        <li><a href="/gallery" class="hover:text-warmgold">Gallery</a></li>
+        <li><a href="/about" class="hover:text-warmgold">About</a></li>
+        <li><a href="/commissions" class="hover:text-warmgold">Commissions</a></li>
+        <li><a href="/videos" class="hover:text-warmgold">Videos</a></li>
+        <li><a href="/contact" class="hover:text-warmgold">Contact</a></li>
+      </ul>
+      <button id="mobile-menu-btn-home" class="md:hidden p-2 text-white" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section class="relative h-screen min-h-[600px] flex items-center justify-center -mx-4 sm:-mx-6">
