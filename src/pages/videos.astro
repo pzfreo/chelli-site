@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const videos = [
+  {
+    title: 'Bass Viol after Meares',
+    description: 'Xavier playing the bass viol after Richard Meares 1660',
+    youtubeId: 'AxsdMzfDBT0',
+    instrumentLink: '/instruments/meares',
+    aspectRatio: 'aspect-[9/16]',
+  },
+  {
+    title: 'GS Mini Guitar',
+    description: 'Hayleigh playing the GS Mini Guitar',
+    youtubeId: 'TfamoAySClU',
+    instrumentLink: '/instruments/gsmini',
+    aspectRatio: 'aspect-video',
+  },
+];
+---
+
+<BaseLayout title="Videos" description="Watch and hear Chelli Strings instruments being played by talented musicians.">
+  <section class="py-12 lg:py-20">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h1 class="font-serif text-4xl lg:text-5xl mb-4">Videos</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Hear these instruments come alive in the hands of talented musicians.
+        </p>
+      </div>
+
+      <div class="space-y-16 max-w-4xl mx-auto">
+        {videos.map((video) => (
+          <div class="text-center">
+            <h2 class="font-serif text-2xl mb-2">{video.title}</h2>
+            <p class="text-gray-600 mb-6">
+              {video.description.split(' ').slice(0, -1).join(' ')}{' '}
+              <a href={video.instrumentLink} class="text-warmgold hover:underline">
+                {video.description.split(' ').slice(-1)}
+              </a>
+            </p>
+            <div class={`${video.aspectRatio} max-w-2xl mx-auto bg-gray-100`}>
+              <iframe
+                class="w-full h-full"
+                src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                title={video.title}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

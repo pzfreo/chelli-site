@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhotoSwipeGallery from '../../components/PhotoSwipeGallery.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const instruments = await getCollection('instruments');
+  return instruments.map((instrument) => ({
+    params: { slug: instrument.slug },
+    props: { instrument },
+  }));
+}
+
+const { instrument } = Astro.props;
+const { Content } = await instrument.render();
+
+const statusLabels: Record<string, string> = {
+  'for-sale': 'For Sale',
+  'sold': 'Sold',
+  'not-for-sale': 'Not for Sale',
+};
+
+const typeLabels: Record<string, string> = {
+  'viol': 'Viol',
+  'violin': 'Violin',
+  'fiddle': 'Fiddle',
+  'guitar': 'Guitar',
+};
+---
+
+<BaseLayout
+  title={instrument.data.title}
+  description={instrument.data.subtitle}
+  image={instrument.data.featuredImage}
+>
+  <article class="py-12 lg:py-20">
+    <div class="container-wide">
+      <!-- Back link -->
+      <a href="/gallery" class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-charcoal mb-8 group">
+        <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Gallery
+      </a>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <!-- Hero Image -->
+        <div class="order-2 lg:order-1">
+          <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
+            <img
+              src={instrument.data.featuredImage}
+              alt={instrument.data.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Thumbnail Gallery -->
+          {instrument.data.images.length > 1 && (
+            <PhotoSwipeGallery images={instrument.data.images} title={instrument.data.title} />
+          )}
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 lg:order-2 lg:sticky lg:top-8 lg:self-start">
+          <div class="mb-6">
+            <p class="text-xs uppercase tracking-wider text-gray-500 mb-2">
+              {typeLabels[instrument.data.type]}
+            </p>
+            <h1 class="font-serif text-3xl lg:text-4xl xl:text-5xl mb-4">
+              {instrument.data.title}
+            </h1>
+            <p class="text-lg text-gray-600">
+              {instrument.data.subtitle}
+            </p>
+          </div>
+
+          <!-- Status/Price -->
+          <div class="mb-8 pb-8 border-b border-gray-200">
+            {instrument.data.status === 'for-sale' && instrument.data.price && (
+              <div class="flex items-baseline gap-4">
+                <span class="text-2xl font-medium">£{instrument.data.price.toLocaleString()}</span>
+                <span class="text-sm text-green-700 bg-green-50 px-3 py-1 rounded-full">Available</span>
+              </div>
+            )}
+
+            {instrument.data.status === 'sold' && (
+              <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Sold</span>
+            )}
+
+            {instrument.data.status === 'not-for-sale' && (
+              <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Not for Sale</span>
+            )}
+          </div>
+
+          <!-- Description -->
+          <div class="prose prose-gray max-w-none mb-8">
+            <Content />
+          </div>
+
+          <!-- CTA -->
+          {instrument.data.status === 'for-sale' && (
+            <a href="/contact" class="btn btn-primary inline-block">
+              Enquire About This Instrument
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .prose a {
+    @apply text-warmgold hover:underline;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+</style>

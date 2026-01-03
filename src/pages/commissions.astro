@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Commissions" description="Commission a bespoke handcrafted instrument from Chelli Strings.">
+  <section class="py-12 lg:py-20">
+    <div class="container-wide">
+      <div class="text-center mb-16">
+        <h1 class="font-serif text-4xl lg:text-5xl mb-4">Commission an Instrument</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Commissioning a bespoke instrument that is built to your personal requirements offers the opportunity to have an instrument that fits you perfectly.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto mb-16">
+        <!-- Process -->
+        <div>
+          <h2 class="font-serif text-2xl mb-6">The Process</h2>
+          <p class="text-gray-600 mb-6">
+            Commissioning an instrument is a simple process. We will start with a discussion about the design of the instrument.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-warmgold text-white flex items-center justify-center font-medium">1</div>
+              <div>
+                <h3 class="font-medium mb-1">Initial Discussion</h3>
+                <p class="text-gray-600 text-sm">We'll explore your vision, preferences, and requirements together.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-warmgold text-white flex items-center justify-center font-medium">2</div>
+              <div>
+                <h3 class="font-medium mb-1">Quotation & Specification</h3>
+                <p class="text-gray-600 text-sm">You'll receive a personalised quotation and detailed specification.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-warmgold text-white flex items-center justify-center font-medium">3</div>
+              <div>
+                <h3 class="font-medium mb-1">Deposit & Timeline</h3>
+                <p class="text-gray-600 text-sm">A 10% deposit secures the commission and we agree on a timeframe.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-warmgold text-white flex items-center justify-center font-medium">4</div>
+              <div>
+                <h3 class="font-medium mb-1">Regular Updates</h3>
+                <p class="text-gray-600 text-sm">You'll receive updates throughout the making process.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-warmgold text-white flex items-center justify-center font-medium">5</div>
+              <div>
+                <h3 class="font-medium mb-1">Completion & Delivery</h3>
+                <p class="text-gray-600 text-sm">A further deposit at varnishing stage, final payment on delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div>
+          <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-4">
+            <img
+              src="/assets/images/smith-viol.jpg"
+              alt="Bass viol after Henry Smith with natural yew fingerboard"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-sm text-gray-500 text-center">
+            Bass viol after Henry Smith with natural yew fingerboard
+          </p>
+        </div>
+      </div>
+
+      <!-- Questions Section -->
+      <div class="bg-cream p-8 lg:p-12 max-w-4xl mx-auto mb-16">
+        <h2 class="font-serif text-2xl mb-6 text-center">Questions to Consider</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-2">
+              <span class="text-warmgold">—</span>
+              Is it a historical recreation or a new design?
+            </li>
+            <li class="flex gap-2">
+              <span class="text-warmgold">—</span>
+              What is the sound you are looking for?
+            </li>
+            <li class="flex gap-2">
+              <span class="text-warmgold">—</span>
+              What aesthetic inspires you?
+            </li>
+          </ul>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-2">
+              <span class="text-warmgold">—</span>
+              Which instruments have you been drawn to?
+            </li>
+            <li class="flex gap-2">
+              <span class="text-warmgold">—</span>
+              Do you have specific playability requirements?
+            </li>
+            <li class="flex gap-2">
+              <span class="text-warmgold">—</span>
+              What is your budget?
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <h2 class="font-serif text-2xl mb-4">Ready to Begin?</h2>
+        <p class="text-gray-600 mb-8 max-w-xl mx-auto">
+          Contact me today to explore creating your perfect instrument.
+        </p>
+        <a href="/contact" class="btn btn-primary">Start Your Commission</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
