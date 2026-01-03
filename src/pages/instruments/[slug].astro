@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PhotoSwipeGallery from '../../components/PhotoSwipeGallery.astro';
 import { getCollection } from 'astro:content';
+import { statusLabels, typeLabels } from '../../lib/labels';
 
 export async function getStaticPaths() {
   const instruments = await getCollection('instruments');
@@ -13,19 +14,6 @@ export async function getStaticPaths() {
 
 const { instrument } = Astro.props;
 const { Content } = await instrument.render();
-
-const statusLabels: Record<string, string> = {
-  'for-sale': 'For Sale',
-  'sold': 'Sold',
-  'not-for-sale': 'Not for Sale',
-};
-
-const typeLabels: Record<string, string> = {
-  'viol': 'Viol',
-  'violin': 'Violin',
-  'fiddle': 'Fiddle',
-  'guitar': 'Guitar',
-};
 ---
 
 <BaseLayout

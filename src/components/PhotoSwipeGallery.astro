@@ -1,13 +1,17 @@
 ---
+import 'photoswipe/dist/photoswipe.css';
+
 interface Props {
   images: string[];
   title: string;
+  id?: string;
 }
 
-const { images, title } = Astro.props;
+const { images, title, id = 'gallery' } = Astro.props;
+const galleryId = `pswp-${id}`;
 ---
 
-<div class="pswp-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
+<div class="pswp-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id={galleryId} data-pswp-gallery>
   {images.map((image, index) => (
     <a
       href={image}
@@ -26,45 +30,46 @@ const { images, title } = Astro.props;
   ))}
 </div>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" />
-
 <script>
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
   import PhotoSwipe from 'photoswipe';
 
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#gallery',
-    children: 'a',
-    pswpModule: PhotoSwipe,
-    bgOpacity: 0.95,
-    padding: { top: 40, bottom: 40, left: 20, right: 20 },
-  });
-
-  // Dynamically get image dimensions
-  lightbox.addFilter('itemData', (itemData, index) => {
-    const img = new Image();
-    img.src = itemData.src as string;
-
-    return {
-      ...itemData,
-      width: img.naturalWidth || 1600,
-      height: img.naturalHeight || 1200,
-    };
-  });
-
-  lightbox.on('uiRegister', function() {
-    lightbox.pswp?.ui?.registerElement({
-      name: 'counter',
-      order: 5,
-      isButton: false,
-      appendTo: 'bar',
-      onInit: (el, pswp) => {
-        pswp.on('change', () => {
-          el.textContent = `${pswp.currIndex + 1} / ${pswp.getNumItems()}`;
-        });
-      }
+  // Initialize PhotoSwipe for all galleries on the page
+  document.querySelectorAll('[data-pswp-gallery]').forEach((gallery) => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: gallery as HTMLElement,
+      children: 'a',
+      pswpModule: PhotoSwipe,
+      bgOpacity: 0.95,
+      padding: { top: 40, bottom: 40, left: 20, right: 20 },
     });
-  });
 
-  lightbox.init();
+    // Dynamically get image dimensions
+    lightbox.addFilter('itemData', (itemData, index) => {
+      const img = new Image();
+      img.src = itemData.src as string;
+
+      return {
+        ...itemData,
+        width: img.naturalWidth || 1600,
+        height: img.naturalHeight || 1200,
+      };
+    });
+
+    lightbox.on('uiRegister', function() {
+      lightbox.pswp?.ui?.registerElement({
+        name: 'counter',
+        order: 5,
+        isButton: false,
+        appendTo: 'bar',
+        onInit: (el, pswp) => {
+          pswp.on('change', () => {
+            el.textContent = `${pswp.currIndex + 1} / ${pswp.getNumItems()}`;
+          });
+        }
+      });
+    });
+
+    lightbox.init();
+  });
 </script>
