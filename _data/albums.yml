@@ -1,9 +1,0 @@
-#each folder is define with a folder, captio (optional) and a list of images
-- folder: terz
-  caption: "Terz"
-  # each image has a filename (the original image filename) and an optional caption
-  # order is important for the order of images in albums and the first image is also use as thumbnail for the list of albums
-  images:
-  - filename: "front1.jpg"
-    caption: "Strad Titian Model"
-  

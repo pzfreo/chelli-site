@@ -1,15 +1,10 @@
-# Jekyll (legacy)
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-
 # Astro
 dist/
 .astro/
+
+# Dependencies
 node_modules/
 
-# Build outputs
-*.log
+# System
 .DS_Store
+*.log
