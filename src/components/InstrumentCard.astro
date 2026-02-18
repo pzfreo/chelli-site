@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { statusLabels, typeLabels } from '../lib/labels';
 
 interface Props {
   title: string;
@@ -13,19 +14,6 @@ interface Props {
 }
 
 const { title, subtitle, type, status, price, featuredImage, slug } = Astro.props;
-
-const statusLabels: Record<string, string> = {
-  'for-sale': 'For Sale',
-  'sold': 'Sold',
-  'not-for-sale': 'Not for Sale',
-};
-
-const typeLabels: Record<string, string> = {
-  'viol': 'Viol',
-  'violin': 'Violin',
-  'fiddle': 'Fiddle',
-  'guitar': 'Guitar',
-};
 
 const statusLabel = statusLabels[status] || status;
 const typeLabel = typeLabels[type] || type;
