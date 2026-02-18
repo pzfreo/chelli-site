@@ -3,13 +3,13 @@ title: Steel String Guitar
 subtitle: GS Mini model guitar
 type: guitar
 status: sold
-featuredImage: /gallery/gsmini/hero.jpg
+featuredImage: ../../assets/gallery/gsmini/hero.jpg
 images:
-  - /gallery/gsmini/hero.jpg
-  - /gallery/gsmini/top1.jpg
-  - /gallery/gsmini/back1.jpg
-  - /gallery/gsmini/back2.jpg
-  - /gallery/gsmini/head.jpg
+  - ../../assets/gallery/gsmini/hero.jpg
+  - ../../assets/gallery/gsmini/top1.jpg
+  - ../../assets/gallery/gsmini/back1.jpg
+  - ../../assets/gallery/gsmini/back2.jpg
+  - ../../assets/gallery/gsmini/head.jpg
 order: 7
 ---
 

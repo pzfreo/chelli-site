@@ -4,13 +4,13 @@ subtitle: After Stauffer 1829
 type: guitar
 status: for-sale
 price: 850
-featuredImage: /gallery/terz/hero.jpg
+featuredImage: ../../assets/gallery/terz/hero.jpg
 images:
-  - /gallery/terz/hero.jpg
-  - /gallery/terz/front2.jpg
-  - /gallery/terz/back1.jpg
-  - /gallery/terz/back2.jpg
-  - /gallery/terz/head.jpg
+  - ../../assets/gallery/terz/hero.jpg
+  - ../../assets/gallery/terz/front2.jpg
+  - ../../assets/gallery/terz/back1.jpg
+  - ../../assets/gallery/terz/back2.jpg
+  - ../../assets/gallery/terz/head.jpg
 order: 6
 ---
 

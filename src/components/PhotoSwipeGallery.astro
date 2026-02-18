@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  images: string[];
+  images: ImageMetadata[];
   title: string;
 }
 
@@ -10,15 +13,17 @@ const { images, title } = Astro.props;
 <div class="pswp-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
   {images.map((image, index) => (
     <a
-      href={image}
-      data-pswp-width="1600"
-      data-pswp-height="1200"
+      href={image.src}
+      data-pswp-width={image.width}
+      data-pswp-height={image.height}
       target="_blank"
       class="block aspect-square overflow-hidden bg-gray-100 cursor-zoom-in"
     >
-      <img
+      <Image
         src={image}
         alt={`${title} - Image ${index + 1}`}
+        widths={[200, 300, 400]}
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         loading={index < 4 ? 'eager' : 'lazy'}
       />
@@ -38,18 +43,6 @@ const { images, title } = Astro.props;
     pswpModule: PhotoSwipe,
     bgOpacity: 0.95,
     padding: { top: 40, bottom: 40, left: 20, right: 20 },
-  });
-
-  // Dynamically get image dimensions
-  lightbox.addFilter('itemData', (itemData, index) => {
-    const img = new Image();
-    img.src = itemData.src as string;
-
-    return {
-      ...itemData,
-      width: img.naturalWidth || 1600,
-      height: img.naturalHeight || 1200,
-    };
   });
 
   lightbox.on('uiRegister', function() {

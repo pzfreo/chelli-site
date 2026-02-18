@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PhotoSwipeGallery from '../../components/PhotoSwipeGallery.astro';
 import { getCollection } from 'astro:content';
@@ -26,13 +27,39 @@ const typeLabels: Record<string, string> = {
   'fiddle': 'Fiddle',
   'guitar': 'Guitar',
 };
+
+const availabilityMap: Record<string, string> = {
+  'for-sale': 'https://schema.org/InStock',
+  'sold': 'https://schema.org/SoldOut',
+  'not-for-sale': 'https://schema.org/Discontinued',
+};
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": instrument.data.title,
+  "description": instrument.data.subtitle,
+  "image": new URL(instrument.data.featuredImage.src, Astro.site).toString(),
+  "brand": {
+    "@type": "Brand",
+    "name": "Chelli Strings"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "GBP",
+    "price": instrument.data.price ?? 0,
+    "availability": availabilityMap[instrument.data.status],
+    "url": new URL(`/instruments/${instrument.slug}`, Astro.site).toString(),
+  },
+};
 ---
 
 <BaseLayout
   title={instrument.data.title}
   description={instrument.data.subtitle}
-  image={instrument.data.featuredImage}
+  image={instrument.data.featuredImage.src}
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
   <article class="py-12 lg:py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <!-- Back link -->
@@ -47,9 +74,11 @@ const typeLabels: Record<string, string> = {
         <!-- Hero Image -->
         <div class="order-2 lg:order-1">
           <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
-            <img
+            <Image
               src={instrument.data.featuredImage}
               alt={instrument.data.title}
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               class="w-full h-full object-cover"
             />
           </div>

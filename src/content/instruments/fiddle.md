@@ -3,16 +3,16 @@ title: Fiddle after Hardie c.1800
 subtitle: Fiddle after Matthew Hardie c.1800
 type: fiddle
 status: sold
-featuredImage: /gallery/fiddle/hero.png
+featuredImage: ../../assets/gallery/fiddle/hero.png
 images:
-  - /gallery/fiddle/hero.png
-  - /gallery/fiddle/full.png
-  - /gallery/fiddle/IMG_0735.JPG
-  - /gallery/fiddle/IMG_0737.JPG
-  - /gallery/fiddle/IMG_0740.JPG
-  - /gallery/fiddle/IMG_0832.JPG
-  - /gallery/fiddle/IMG_0839.png
-  - /gallery/fiddle/IMG_0846.png
+  - ../../assets/gallery/fiddle/hero.png
+  - ../../assets/gallery/fiddle/full.png
+  - ../../assets/gallery/fiddle/IMG_0735.JPG
+  - ../../assets/gallery/fiddle/IMG_0737.JPG
+  - ../../assets/gallery/fiddle/IMG_0740.JPG
+  - ../../assets/gallery/fiddle/IMG_0832.JPG
+  - ../../assets/gallery/fiddle/IMG_0839.png
+  - ../../assets/gallery/fiddle/IMG_0846.png
 order: 4
 ---
 

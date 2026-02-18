@@ -4,12 +4,12 @@ subtitle: Bass Viol after Henry Smith 1637
 type: viol
 status: for-sale
 price: 2500
-featuredImage: /gallery/smith/hero.jpg
+featuredImage: ../../assets/gallery/smith/hero.jpg
 images:
-  - /gallery/smith/hero.jpg
-  - /gallery/smith/purfling1.jpg
-  - /gallery/smith/purfling2.jpg
-  - /gallery/smith/violscroll.jpg
+  - ../../assets/gallery/smith/hero.jpg
+  - ../../assets/gallery/smith/purfling1.jpg
+  - ../../assets/gallery/smith/purfling2.jpg
+  - ../../assets/gallery/smith/violscroll.jpg
 order: 2
 ---
 
