@@ -3,20 +3,20 @@ title: Bass Viol after Richard Meares 1660
 subtitle: Bass Viol after Richard Meares 1660
 type: viol
 status: sold
-featuredImage: /gallery/meares/hero.jpg
+featuredImage: ../../assets/gallery/meares/hero.jpg
 images:
-  - /gallery/meares/hero.jpg
-  - /gallery/meares/IMG_3478-EDIT.jpg
-  - /gallery/meares/IMG_3499-EDIT.jpg
-  - /gallery/meares/IMG_3507.jpg
-  - /gallery/meares/IMG_3510.jpg
-  - /gallery/meares/IMG_3514.jpg
-  - /gallery/meares/IMG_3517.jpg
-  - /gallery/meares/IMG_3519.jpg
-  - /gallery/meares/IMG_3527.jpg
-  - /gallery/meares/IMG_3532.jpg
-  - /gallery/meares/IMG_3539.jpg
-  - /gallery/meares/IMG_3541.jpg
+  - ../../assets/gallery/meares/hero.jpg
+  - ../../assets/gallery/meares/IMG_3478-EDIT.jpg
+  - ../../assets/gallery/meares/IMG_3499-EDIT.jpg
+  - ../../assets/gallery/meares/IMG_3507.jpg
+  - ../../assets/gallery/meares/IMG_3510.jpg
+  - ../../assets/gallery/meares/IMG_3514.jpg
+  - ../../assets/gallery/meares/IMG_3517.jpg
+  - ../../assets/gallery/meares/IMG_3519.jpg
+  - ../../assets/gallery/meares/IMG_3527.jpg
+  - ../../assets/gallery/meares/IMG_3532.jpg
+  - ../../assets/gallery/meares/IMG_3539.jpg
+  - ../../assets/gallery/meares/IMG_3541.jpg
 order: 1
 ---
 

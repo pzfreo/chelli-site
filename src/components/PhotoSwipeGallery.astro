@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import 'photoswipe/dist/photoswipe.css';
 
 interface Props {
-  images: string[];
+  images: ImageMetadata[];
   title: string;
   id?: string;
 }
@@ -14,13 +16,17 @@ const galleryId = `pswp-${id}`;
 <div class="pswp-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id={galleryId} data-pswp-gallery>
   {images.map((image, index) => (
     <a
-      href={image}
+      href={image.src}
+      data-pswp-width={image.width}
+      data-pswp-height={image.height}
       target="_blank"
       class="block aspect-[3/4] overflow-hidden bg-gray-100 cursor-zoom-in"
     >
-      <img
+      <Image
         src={image}
         alt={`${title} - Image ${index + 1}`}
+        widths={[200, 300, 400]}
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         loading={index < 4 ? 'eager' : 'lazy'}
       />
@@ -40,37 +46,6 @@ const galleryId = `pswp-${id}`;
       pswpModule: PhotoSwipe,
       bgOpacity: 0.95,
       padding: { top: 40, bottom: 40, left: 20, right: 20 },
-    });
-
-    // Get actual image dimensions from thumbnail (same src = same dimensions)
-    lightbox.addFilter('itemData', (itemData, index) => {
-      const linkEl = gallery.querySelectorAll('a')[index];
-      const imgEl = linkEl?.querySelector('img');
-
-      // Use thumbnail's natural dimensions (already loaded)
-      if (imgEl && imgEl.naturalWidth && imgEl.naturalHeight) {
-        return {
-          ...itemData,
-          width: imgEl.naturalWidth,
-          height: imgEl.naturalHeight,
-        };
-      }
-
-      // Fallback: load image to get dimensions
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => {
-          resolve({
-            ...itemData,
-            width: img.naturalWidth,
-            height: img.naturalHeight,
-          });
-        };
-        img.onerror = () => {
-          resolve({ ...itemData, width: 1200, height: 1600 });
-        };
-        img.src = itemData.src as string;
-      });
     });
 
     lightbox.on('uiRegister', function() {

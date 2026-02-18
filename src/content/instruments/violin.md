@@ -3,13 +3,13 @@ title: Violin after Stradivari
 subtitle: Violin after Stradivari
 type: violin
 status: not-for-sale
-featuredImage: /gallery/violin/hero.jpg
+featuredImage: ../../assets/gallery/violin/hero.jpg
 images:
-  - /gallery/violin/hero.jpg
-  - /gallery/violin/back.jpg
-  - /gallery/violin/head.jpg
-  - /gallery/violin/top2.jpg
-  - /gallery/violin/top3.jpg
+  - ../../assets/gallery/violin/hero.jpg
+  - ../../assets/gallery/violin/back.jpg
+  - ../../assets/gallery/violin/head.jpg
+  - ../../assets/gallery/violin/top2.jpg
+  - ../../assets/gallery/violin/top3.jpg
 order: 5
 ---
 

@@ -2,14 +2,14 @@ import { defineCollection, z } from 'astro:content';
 
 const instruments = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     subtitle: z.string(),
     type: z.enum(['viol', 'violin', 'fiddle', 'guitar']),
     status: z.enum(['for-sale', 'sold', 'not-for-sale']),
     price: z.number().optional(),
-    featuredImage: z.string(),
-    images: z.array(z.string()),
+    featuredImage: image(),
+    images: z.array(image()),
     order: z.number().default(0),
   }),
 });

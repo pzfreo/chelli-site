@@ -4,14 +4,14 @@ subtitle: Baroque violin after Strad 1716
 type: violin
 status: for-sale
 price: 2800
-featuredImage: /gallery/baroque/hero.jpg
+featuredImage: ../../assets/gallery/baroque/hero.jpg
 images:
-  - /gallery/baroque/hero.jpg
-  - /gallery/baroque/IMG_0745.JPG
-  - /gallery/baroque/IMG_0783.png
-  - /gallery/baroque/IMG_0856.JPG
-  - /gallery/baroque/IMG_0860.JPG
-  - /gallery/baroque/IMG_0867.JPG
+  - ../../assets/gallery/baroque/hero.jpg
+  - ../../assets/gallery/baroque/IMG_0745.JPG
+  - ../../assets/gallery/baroque/IMG_0783.png
+  - ../../assets/gallery/baroque/IMG_0856.JPG
+  - ../../assets/gallery/baroque/IMG_0860.JPG
+  - ../../assets/gallery/baroque/IMG_0867.JPG
 order: 3
 ---
 

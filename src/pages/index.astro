@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import heroImage from '../assets/gallery/fiddle/hero.png';
 import { navLinks } from '../lib/labels';
 
 const instruments = await getCollection('instruments');
@@ -8,6 +10,25 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
 ---
 
 <BaseLayout title="Handcrafted Stringed Instruments" description="Handcrafted stringed instruments from Sussex, England. Viols, baroque violins, fiddles, and guitars made with traditional techniques.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Chelli Strings",
+    "description": "Handcrafted stringed instruments from Sussex, England. Viols, baroque violins, fiddles, and guitars made with traditional techniques.",
+    "url": "https://chellistrings.co.uk",
+    "telephone": "+447740199729",
+    "email": "paul@fremantle.org",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chichester",
+      "addressRegion": "West Sussex",
+      "addressCountry": "GB"
+    },
+    "sameAs": [
+      "https://www.instagram.com/chellistrings",
+      "https://paulfremantleluthier.substack.com"
+    ]
+  })} />
   <!-- Custom transparent header for homepage -->
   <header slot="header" class="absolute top-0 left-0 right-0 z-20 py-6 px-6 lg:px-12">
     <nav class="flex items-center justify-between max-w-7xl mx-auto">
@@ -30,9 +51,11 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
   <!-- Hero Section -->
   <section class="relative h-screen min-h-[600px] flex items-center justify-center">
     <div class="absolute inset-0">
-      <img
-        src="/gallery/fiddle/hero.png"
+      <Image
+        src={heroImage}
         alt="Close-up of a handcrafted fiddle showing the warm wood grain and expert craftsmanship of the scroll and pegs"
+        widths={[640, 1024, 1440, 1920]}
+        sizes="100vw"
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
@@ -70,9 +93,11 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
           {forSale.map((instrument) => (
             <a href={`/instruments/${instrument.slug}`} class="group block">
               <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-4">
-                <img
+                <Image
                   src={instrument.data.featuredImage}
                   alt={instrument.data.title}
+                  widths={[300, 450, 600]}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
