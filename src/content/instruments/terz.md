@@ -3,7 +3,7 @@ title: Terz Guitar
 subtitle: After Stauffer 1829
 type: guitar
 status: for-sale
-price: 850
+price: 1250
 featuredImage: ../../assets/gallery/terz/hero.jpg
 images:
   - ../../assets/gallery/terz/hero.jpg
@@ -11,7 +11,7 @@ images:
   - ../../assets/gallery/terz/back1.jpg
   - ../../assets/gallery/terz/back2.jpg
   - ../../assets/gallery/terz/head.jpg
-order: 6
+order: 7
 ---
 
 This guitar is based on a Terz guitar 1829 from Johann Georg Stauffer.
