@@ -12,7 +12,7 @@ images:
   - ../../assets/gallery/baroque/IMG_0856.JPG
   - ../../assets/gallery/baroque/IMG_0860.JPG
   - ../../assets/gallery/baroque/IMG_0867.JPG
-order: 3
+order: 4
 ---
 
 This violin is based on trying to recreate the original 18th Century Cremonese violins before they had their necks reset. This is an instrument that was made according to historic approaches and plays and feels as Cremonese violins did in the 1710s-1720s, to the best of our knowledge. If you are interested, I can send you an essay on this topic!

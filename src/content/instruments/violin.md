@@ -10,7 +10,7 @@ images:
   - ../../assets/gallery/violin/head.jpg
   - ../../assets/gallery/violin/top2.jpg
   - ../../assets/gallery/violin/top3.jpg
-order: 5
+order: 6
 ---
 
 This violin was made in 2016 and was my first bowed instrument.
