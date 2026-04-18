@@ -1,6 +1,6 @@
 ---
 title: Octave Mandolin
-subtitle: Inspired by Graham McDonald
+subtitle: Guitar-bodied Archtop
 type: mandolin
 status: for-sale
 price: 3500
