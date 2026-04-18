@@ -17,7 +17,7 @@ images:
   - ../../assets/gallery/meares/IMG_3532.jpg
   - ../../assets/gallery/meares/IMG_3539.jpg
   - ../../assets/gallery/meares/IMG_3541.jpg
-order: 1
+order: 2
 ---
 
 This viol is based on the famous 1660 viol by Richard Meares in the Royal College of Music, London. You can see this being played in the [Videos](/videos) page. You can download a [datasheet](/assets/pdfs/meares-viol-datasheet.pdf) for this viol.

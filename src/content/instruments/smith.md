@@ -10,7 +10,7 @@ images:
   - ../../assets/gallery/smith/purfling1.jpg
   - ../../assets/gallery/smith/purfling2.jpg
   - ../../assets/gallery/smith/violscroll.jpg
-order: 2
+order: 3
 ---
 
 This viol is based on the Henry Smith viol from 1637. This was my first bass viol.

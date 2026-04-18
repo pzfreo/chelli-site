@@ -9,6 +9,7 @@ export const typeLabels: Record<string, string> = {
   'violin': 'Violin',
   'fiddle': 'Fiddle',
   'guitar': 'Guitar',
+  'salter': 'Salter',
 };
 
 export const navLinks = [

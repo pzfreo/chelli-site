@@ -13,7 +13,7 @@ images:
   - ../../assets/gallery/fiddle/IMG_0832.JPG
   - ../../assets/gallery/fiddle/IMG_0839.png
   - ../../assets/gallery/fiddle/IMG_0846.png
-order: 4
+order: 5
 ---
 
 Matthew Hardie was a leading violin maker in Edinburgh at the turn of the 19th Century. Like other Scottish makers of his time, he continued to use baroque necks many years after the fashion for modern necks had prevailed elsewhere. Unlike Strad, who nailed the necks on, Hardie used a single screw. Hardie's instruments are sought after, especially as Scottish fiddles by players such as Aly Bain.

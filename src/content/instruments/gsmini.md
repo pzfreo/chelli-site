@@ -10,7 +10,7 @@ images:
   - ../../assets/gallery/gsmini/back1.jpg
   - ../../assets/gallery/gsmini/back2.jpg
   - ../../assets/gallery/gsmini/head.jpg
-order: 7
+order: 8
 ---
 
 GS Mini style guitar in Indian Rosewood.
