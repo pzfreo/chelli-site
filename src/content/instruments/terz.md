@@ -11,7 +11,7 @@ images:
   - ../../assets/gallery/terz/back1.jpg
   - ../../assets/gallery/terz/back2.jpg
   - ../../assets/gallery/terz/head.jpg
-order: 7
+order: 3
 ---
 
 This guitar is based on a Terz guitar 1829 from Johann Georg Stauffer.
