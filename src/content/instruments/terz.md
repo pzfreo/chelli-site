@@ -2,8 +2,7 @@
 title: Terz Guitar
 subtitle: After Stauffer 1829
 type: guitar
-status: for-sale
-price: 1250
+status: sold
 featuredImage: ../../assets/gallery/terz/hero.jpg
 images:
   - ../../assets/gallery/terz/hero.jpg
