@@ -11,7 +11,7 @@ const sortedInstruments = instruments.sort((a, b) => a.data.order - b.data.order
 const heroImages = sortedInstruments.map(i => ({
   src: i.data.featuredImage,
   title: i.data.title,
-  slug: i.slug
+  slug: i.id
 }));
 ---
 
@@ -90,7 +90,7 @@ const heroImages = sortedInstruments.map(i => ({
             status={instrument.data.status}
             price={instrument.data.price}
             featuredImage={instrument.data.featuredImage}
-            slug={instrument.slug}
+            slug={instrument.id}
           />
         ))}
       </div>
