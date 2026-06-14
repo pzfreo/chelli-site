@@ -91,7 +91,7 @@ const forSale = instruments.filter(i => i.data.status === 'for-sale').slice(0, 3
 
         <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
           {forSale.map((instrument) => (
-            <a href={`/instruments/${instrument.slug}`} class="group block">
+            <a href={`/instruments/${instrument.id}`} class="group block">
               <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-4">
                 <Image
                   src={instrument.data.featuredImage}
