@@ -12,7 +12,10 @@
     "@tailwindcss/vite": "^4.2.0",
     "astro": "^6.4.6",
     "photoswipe": "^5.4.4",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4.2.0"
+  },
+  "overrides": {
+    "sharp": "$sharp"
   }
 }
