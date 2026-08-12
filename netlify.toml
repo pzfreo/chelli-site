@@ -20,3 +20,9 @@
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Origins: cloud.umami.is (analytics script), gateway.umami.is (its beacon),
+    # fonts.googleapis.com + fonts.gstatic.com (webfonts), www.youtube.com (video embeds).
+    # style-src-attr covers a few inline style="" attributes on the home and gallery pages;
+    # style-src repeats 'unsafe-inline' only as a fallback for browsers without CSP3 elem/attr.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src-elem 'self' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gateway.umami.is; frame-src https://www.youtube.com; form-action 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"

@@ -11,6 +11,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    // Keep bundled scripts in external files so the CSP needs no per-build hashes.
+    build: { assetsInlineLimit: 0 },
   },
   image: {
     domains: [],
