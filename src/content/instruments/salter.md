@@ -2,7 +2,8 @@
 title: Salter after Perry 1777
 subtitle: After Perry 1777
 type: salter
-status: not-for-sale
+status: for-sale
+price: 6000
 featuredImage: ../../assets/gallery/salter/hero.jpg
 images:
   - ../../assets/gallery/salter/hero.jpg
