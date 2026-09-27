@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSwipeGallery from '../components/PhotoSwipeGallery.astro';
 import caseImage from '../assets/shop/purfling-marker-case.jpg';
+import toolImage from '../assets/shop/purfling-marker-tool.jpg';
 
 // Set to true when the batch is gone; the buy buttons are replaced by a contact link.
 const soldOut = false;
@@ -54,7 +56,7 @@ const productSchema = {
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <!-- Image -->
         <div class="order-2 lg:order-1">
-          <div class="bg-cream">
+          <div class="bg-cream mb-6">
             <Image
               src={caseImage}
               alt="Brass purfling marker in its fitted case"
@@ -63,6 +65,7 @@ const productSchema = {
               class="w-full h-auto"
             />
           </div>
+          <PhotoSwipeGallery images={[caseImage, toolImage]} title="Purfling Marker" />
         </div>
 
         <!-- Content -->
