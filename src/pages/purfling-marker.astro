@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Set to true when the batch is gone; the buy buttons are replaced by a contact link.
+const soldOut = false;
+const price = 99;
+
+// Stripe Payment Links, one per shipping region. Each link restricts the
+// shipping addresses it accepts, so buyers can't pick a cheaper region.
+// A region with an empty href shows as "coming soon".
+const regions = [
+  {
+    name: 'United Kingdom',
+    shipping: 'TODO postage',
+    note: 'Royal Mail Tracked.',
+    href: '',
+  },
+  {
+    name: 'Europe',
+    shipping: 'TODO postage + import VAT and duty',
+    note: 'Duties paid: nothing more to pay on delivery. Austria, Bulgaria, Cyprus, Denmark, Estonia, Finland, France, Germany, Ireland, Italy, Luxembourg, Malta, Netherlands, Portugal, Slovakia, Spain, Sweden.',
+    href: '',
+  },
+  {
+    name: 'United States',
+    shipping: 'TODO postage + import duty',
+    note: 'Duties paid: nothing more to pay on delivery.',
+    href: '',
+  },
+];
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Purfling Marker",
+  "brand": { "@type": "Brand", "name": "Chelli Strings" },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "GBP",
+    "price": price,
+    "availability": soldOut ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
+    "url": new URL('/purfling-marker', Astro.site).toString(),
+  },
+};
+---
+
+<BaseLayout title="Purfling Marker" description="A purfling marker for luthiers, made by Chelli Strings in Sussex.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <section class="py-12 lg:py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <!-- Image -->
+        <div class="order-2 lg:order-1">
+          <div class="aspect-[4/3] bg-cream flex items-center justify-center text-gray-500">
+            TODO product photos
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 lg:order-2 lg:sticky lg:top-8 lg:self-start">
+          <div class="mb-6">
+            <p class="text-xs uppercase tracking-wider text-gray-500 mb-2">Luthier's Tools</p>
+            <h1 class="font-serif text-3xl lg:text-4xl xl:text-5xl mb-4">Purfling Marker</h1>
+            <p class="text-lg text-gray-600">TODO one-line summary</p>
+          </div>
+
+          <div class="mb-8 pb-8 border-b border-gray-200">
+            <div class="flex items-baseline gap-4">
+              <span class="text-2xl font-medium">£{price}</span>
+              {soldOut ? (
+                <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Sold out</span>
+              ) : (
+                <span class="text-sm text-green-700 bg-green-50 px-3 py-1 rounded-full">Available</span>
+              )}
+            </div>
+          </div>
+
+          <div class="text-gray-600 leading-relaxed space-y-4 mb-8">
+            <p>TODO description: what it does, how it's made, what's in the box.</p>
+          </div>
+
+          {soldOut ? (
+            <div>
+              <p class="text-gray-600 mb-6">This batch has sold out. Get in touch to hear about the next one.</p>
+              <a href="/contact" class="btn btn-primary">Contact Me</a>
+            </div>
+          ) : (
+            <div>
+              <h2 class="font-serif text-2xl mb-4">Buy</h2>
+              <p class="text-sm text-gray-600 mb-6">Choose where it's being delivered to. Payment is handled securely by Stripe.</p>
+              <div class="space-y-4">
+                {regions.map(region => (
+                  <div class="border border-gray-200 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <div class="flex-1">
+                      <p class="font-medium">{region.name}</p>
+                      <p class="text-sm text-gray-600">£{price} + {region.shipping}</p>
+                      <p class="text-xs text-gray-500 mt-1">{region.note}</p>
+                    </div>
+                    {region.href ? (
+                      <a href={region.href} class="btn btn-primary text-center">Buy</a>
+                    ) : (
+                      <span class="btn text-center opacity-50 cursor-not-allowed">Coming soon</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p class="text-sm text-gray-600 mt-6">
+                Elsewhere, or a European country not listed? <a href="/contact" class="text-warmgold hover:underline">Contact me</a> and I'll quote postage.
+                See the <a href="/terms#sale" class="text-warmgold hover:underline">terms of sale</a> for delivery, returns and cancellation.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
