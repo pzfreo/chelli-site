@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhotoSwipeGallery from '../components/PhotoSwipeGallery.astro';
+import BladeSetupDiagram from '../components/BladeSetupDiagram.astro';
 import caseImage from '../assets/shop/purfling-marker-case.jpg';
 import toolImage from '../assets/shop/purfling-marker-tool.jpg';
 import adjustmentsImage from '../assets/shop/purfling-marker-adjustments.png';
@@ -183,6 +184,30 @@ const productSchema = {
               <div><p class="font-medium text-charcoal">Blade clamp screw</p><p class="text-sm">Loosen with the 2 mm hex key to remove the blades. For other purfling, turn the blades round and clamp a piece of your purfling between them.</p></div>
             </li>
           </ol>
+        </div>
+      </div>
+
+      <!-- Blade setup -->
+      <div class="mt-20 pt-12 border-t border-gray-200 max-w-4xl mx-auto">
+        <h2 class="font-serif text-2xl mb-3 text-center">Setting the blades</h2>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+          Looking end-on at the two blades, to scale. Each blade is flat on one side and bevelled on the other, with the sharp edge on the flat side.
+        </p>
+        <div class="grid md:grid-cols-2 gap-12">
+          <figure>
+            <BladeSetupDiagram variant="supplied" />
+            <figcaption class="mt-4">
+              <p class="font-medium">As supplied: violin purfling</p>
+              <p class="text-sm text-gray-600">Bevels facing each other, sharp edges on the outside. The lines are marked the combined thickness of the two blades apart, 1.4 mm. No adjustment needed.</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <BladeSetupDiagram variant="purfling" />
+            <figcaption class="mt-4">
+              <p class="font-medium">Any other purfling</p>
+              <p class="text-sm text-gray-600">Loosen the clamp screw, turn both blades round so the sharp edges face each other, and clamp a piece of your purfling between them. The lines are then marked exactly the width of your purfling apart.</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
