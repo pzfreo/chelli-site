@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import caseImage from '../assets/shop/purfling-marker-case.jpg';
 
 // Set to true when the batch is gone; the buy buttons are replaced by a contact link.
 const soldOut = false;
@@ -33,6 +35,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Purfling Marker",
+  "image": new URL(caseImage.src, Astro.site).toString(),
   "brand": { "@type": "Brand", "name": "Chelli Strings" },
   "offers": {
     "@type": "Offer",
@@ -51,8 +54,14 @@ const productSchema = {
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <!-- Image -->
         <div class="order-2 lg:order-1">
-          <div class="aspect-[4/3] bg-cream flex items-center justify-center text-gray-500">
-            TODO product photos
+          <div class="bg-cream">
+            <Image
+              src={caseImage}
+              alt="Brass purfling marker in its fitted case"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              class="w-full h-auto"
+            />
           </div>
         </div>
 
