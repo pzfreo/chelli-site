@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PhotoSwipeGallery from '../components/PhotoSwipeGallery.astro';
 import caseImage from '../assets/shop/purfling-marker-case.jpg';
 import toolImage from '../assets/shop/purfling-marker-tool.jpg';
+import adjustmentsImage from '../assets/shop/purfling-marker-adjustments.png';
 
 // Set to true when the batch is gone; the buy buttons are replaced by a contact link.
 const soldOut = false;
@@ -144,6 +145,44 @@ const productSchema = {
               </p>
             </div>
           )}
+        </div>
+      </div>
+
+      <!-- Adjustments -->
+      <div class="mt-20 pt-12 border-t border-gray-200 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="max-w-md mx-auto w-full">
+          <Image
+            src={adjustmentsImage}
+            alt="Purfling marker with its parts numbered: 1 working face, 2 blades, 3 thumbwheel, 4 locking knob, 5 blade clamp screw"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 1024px) 100vw, 28rem"
+            class="w-full h-auto"
+          />
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl mb-6">Adjustments</h2>
+          <ol class="space-y-5 text-gray-600">
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">1</span>
+              <div><p class="font-medium text-charcoal">Working face</p><p class="text-sm">Runs along the edge of the plate. The relief channel down the middle means it bears on the edge at two points.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">2</span>
+              <div><p class="font-medium text-charcoal">Blades</p><p class="text-sm">Mark the two lines of the purfling channel. Set for violin purfling as supplied.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">3</span>
+              <div><p class="font-medium text-charcoal">Thumbwheel</p><p class="text-sm">Sets the margin: turn it to move the blades closer to or further from the working face. Loosen the locking knob first.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">4</span>
+              <div><p class="font-medium text-charcoal">Locking knob</p><p class="text-sm">Tighten to hold the margin once it is set.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">5</span>
+              <div><p class="font-medium text-charcoal">Blade clamp screw</p><p class="text-sm">Loosen with the 2 mm hex key to remove the blades. For other purfling, turn the blades round and clamp a piece of your purfling between them.</p></div>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
