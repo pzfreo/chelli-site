@@ -37,7 +37,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Purfling Marker",
-  "description": "A double-blade purfling cutter in solid brass with fine thumbwheel adjustment.",
+  "description": "A double-blade purfling marker in solid brass with fine thumbwheel adjustment.",
   "image": new URL(caseImage.src, Astro.site).toString(),
   "brand": { "@type": "Brand", "name": "Chelli Strings" },
   "offers": {
@@ -50,7 +50,7 @@ const productSchema = {
 };
 ---
 
-<BaseLayout title="Purfling Marker" description="A double-blade purfling cutter in solid brass with fine thumbwheel adjustment, made by Chelli Strings in Sussex.">
+<BaseLayout title="Purfling Marker" description="A double-blade purfling marker in solid brass with fine thumbwheel adjustment, hand assembled in Britain.">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
   <section class="py-12 lg:py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
@@ -74,7 +74,7 @@ const productSchema = {
           <div class="mb-6">
             <p class="text-xs uppercase tracking-wider text-gray-500 mb-2">Luthier's Tools</p>
             <h1 class="font-serif text-3xl lg:text-4xl xl:text-5xl mb-4">Purfling Marker</h1>
-            <p class="text-lg text-gray-600">A double-blade purfling cutter in solid brass, with fine thumbwheel adjustment</p>
+            <p class="text-lg text-gray-600">A double-blade purfling marker in solid brass, with fine thumbwheel adjustment</p>
           </div>
 
           <div class="mb-8 pb-8 border-b border-gray-200">
@@ -90,25 +90,27 @@ const productSchema = {
 
           <div class="text-gray-600 leading-relaxed space-y-4 mb-8">
             <p>
-              Run the working face along the edge of a violin plate and two parallel blades score both sides of the purfling channel in a single pass, ready to be chiselled out.
+              Run the working face along the edge of a violin plate and two parallel blades mark both lines of the purfling channel in a single pass.
             </p>
             <p>
-              The edge margin is set with a knurled thumbwheel that feeds the blades in or out on a fine screw, so it is smooth and repeatable rather than slide-and-clamp. A knurled knob underneath locks it. The working face is slightly convex with a relief slot down the middle, so the tool bears on the edge at two polished points. It follows irregular edges without rocking and won't mark a finished edge.
+              The edge margin is set with a knurled thumbwheel that feeds the blades in or out on a fine screw, so it is smooth and repeatable rather than slide-and-clamp. A knurled knob underneath locks it. The working face is slightly convex with a relief channel down the middle, so the tool bears on the edge at two points and follows irregular edges without rocking.
             </p>
             <p>
-              Channel width is set by a shim between the blades, and depth of cut by how far the blades project. One screw clamps both.
+              As supplied, the blades are set for standard violin purfling with no adjustment needed. For other purfling, take the blades out, turn them round, and clamp a piece of your purfling between them to set the width. Depth is set by how far the blades project, and one screw clamps them.
             </p>
             <p>
-              Machined from free-machining brass with a satin finish, knurled brass controls and stainless fixings. Based on the original design by Brian Hart and Shem Mackey.
+              Solid brass, hand assembled in Britain.
             </p>
             <h2 class="font-serif text-xl text-charcoal pt-2">In the box</h2>
             <ul class="list-disc pl-5 space-y-1">
-              <li>Purfling cutter, fitted with two blades</li>
-              <li>TODO spacers/shims: which widths?</li>
-              <li>TODO spare blades: how many?</li>
+              <li>Purfling marker, fitted with two blades</li>
               <li>2 mm hex key for the blade clamp</li>
               <li>Fitted, hinged case with magnetic catch</li>
             </ul>
+            <h2 class="font-serif text-xl text-charcoal pt-2">Before use</h2>
+            <p>
+              The blades are supplied unsharpened; sharpen them to suit your work. The edges of the channel in the working face may need a light deburr. Check that the working face won't mark your instrument before use; that is the user's responsibility.
+            </p>
           </div>
 
           {soldOut ? (
