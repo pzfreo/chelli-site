@@ -50,8 +50,8 @@ const dimY = 250;
   <!-- Purfling -->
   {variant === 'purfling' && (
     <g>
-      <rect x={left + t} y={top + 30} width={purfling} height={bevelStart - top - 40} fill="#1a1a1a" />
-      <rect x={left + t + purfling * 0.3} y={top + 30} width={purfling * 0.4} height={bevelStart - top - 40} fill="#f3eee2" />
+      <rect x={left + t} y="0" width={purfling} height={bevelStart - 4} fill="#1a1a1a" />
+      <rect x={left + t + purfling * 0.3} y="0" width={purfling * 0.4} height={bevelStart - 4} fill="#f3eee2" />
     </g>
   )}
 
@@ -85,7 +85,7 @@ const dimY = 250;
       <g>
         <text x={left - 12} y={bevelStart + 20} text-anchor="end">bevel</text>
         <text x={right + t + 12} y={bevelStart + 20}>bevel</text>
-        <text x="150" y={top + 16} text-anchor="middle">purfling</text>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#1a1a1a" transform={`translate(150 ${(bevelStart - 4) / 2}) rotate(-90)`}>purfling</text>
         <text x="150" y={bevelStart + 22} text-anchor="middle" font-size="11">sharp</text>
         <text x="150" y={bevelStart + 35} text-anchor="middle" font-size="11">edges</text>
         <line x1="140" y1={bevelStart + 42} x2={edges[0] + 2} y2={tip - 4} stroke="#4b5563" stroke-width="1" />
