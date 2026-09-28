@@ -16,11 +16,14 @@ const bevelStart = tip - bevelLength;
 const purfling = 1.1 * s; // any width; illustrative only
 
 // Each blade is drawn from its flat face. `flatOnLeft` puts the flat face
-// (and so the sharp edge) on the left-hand side of the blade.
+// (and so the sharp edge) on the left-hand side of the blade. The top is a
+// zigzag break line: the blades carry on upwards beyond the drawing.
 function blade(x: number, flatOnLeft: boolean) {
   const flat = flatOnLeft ? x : x + t;
   const back = flatOnLeft ? x + t : x;
-  return `M${flat},${top} L${flat},${tip} L${back},${bevelStart} L${back},${top} Z`;
+  const step = (flat - back) / 4;
+  const zigzag = [1, 2, 3].map((i) => `L${back + step * i},${top + (i % 2 ? -5 : 5)}`).join(' ');
+  return `M${flat},${top} L${flat},${tip} L${back},${bevelStart} L${back},${top} ${zigzag} Z`;
 }
 
 let left: number, right: number, edges: [number, number];
