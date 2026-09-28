@@ -1,0 +1,237 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSwipeGallery from '../components/PhotoSwipeGallery.astro';
+import BladeSetupDiagram from '../components/BladeSetupDiagram.astro';
+import caseImage from '../assets/shop/purfling-marker-case.jpg';
+import toolImage from '../assets/shop/purfling-marker-tool.jpg';
+import adjustmentsImage from '../assets/shop/purfling-marker-adjustments.png';
+import bladesSuppliedImage from '../assets/shop/purfling-marker-blades-supplied.png';
+import bladesPurflingImage from '../assets/shop/purfling-marker-blades-purfling.png';
+
+// Set to true when the batch is gone; the buy buttons are replaced by a contact link.
+const soldOut = false;
+const price = 99;
+
+// Stripe Payment Links, one per shipping region. Each link restricts the
+// shipping addresses it accepts, so buyers can't pick a cheaper region.
+// A region with an empty href shows as "coming soon".
+const regions = [
+  {
+    name: 'United Kingdom',
+    shipping: 'TODO postage',
+    note: 'Royal Mail Tracked.',
+    href: '',
+  },
+  {
+    name: 'Europe',
+    shipping: 'TODO postage + import VAT and duty',
+    note: 'Duties paid: nothing more to pay on delivery. Austria, Bulgaria, Cyprus, Denmark, Estonia, Finland, France, Germany, Ireland, Italy, Luxembourg, Malta, Netherlands, Portugal, Slovakia, Spain, Sweden.',
+    href: '',
+  },
+  {
+    name: 'United States',
+    shipping: 'TODO postage + import duty',
+    note: 'Duties paid: nothing more to pay on delivery.',
+    href: '',
+  },
+];
+// Until at least one Payment Link is set, the buy boxes are hidden and
+// buyers are asked to get in touch instead.
+const onlineSales = regions.some((region) => region.href);
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Purfling Marker",
+  "description": "A double-blade purfling marker in solid brass with fine thumbwheel adjustment.",
+  "image": new URL(caseImage.src, Astro.site).toString(),
+  "brand": { "@type": "Brand", "name": "Chelli Strings" },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "GBP",
+    "price": price,
+    "availability": soldOut ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
+    "url": new URL('/purfling-marker', Astro.site).toString(),
+  },
+};
+---
+
+<BaseLayout title="Purfling Marker" description="A double-blade purfling marker in solid brass with fine thumbwheel adjustment, hand assembled in Britain.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <section class="py-12 lg:py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <!-- Image -->
+        <div class="order-2 lg:order-1">
+          <div class="bg-cream mb-6">
+            <Image
+              src={caseImage}
+              alt="Brass purfling marker in its fitted case"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              class="w-full h-auto"
+            />
+          </div>
+          <PhotoSwipeGallery images={[caseImage, toolImage, adjustmentsImage, bladesSuppliedImage, bladesPurflingImage]} title="Purfling Marker" />
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 lg:order-2 lg:sticky lg:top-8 lg:self-start">
+          <div class="mb-6">
+            <p class="text-xs uppercase tracking-wider text-gray-500 mb-2">Luthier's Tools</p>
+            <h1 class="font-serif text-3xl lg:text-4xl xl:text-5xl mb-4">Purfling Marker</h1>
+            <p class="text-lg text-gray-600">A double-blade purfling marker in solid brass, with fine thumbwheel adjustment</p>
+          </div>
+
+          <div class="mb-8 pb-8 border-b border-gray-200">
+            <div class="flex items-baseline gap-4">
+              <span class="text-2xl font-medium">£{price}</span>
+              {soldOut ? (
+                <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Sold out</span>
+              ) : (
+                <span class="text-sm text-green-700 bg-green-50 px-3 py-1 rounded-full">Available</span>
+              )}
+            </div>
+            {!soldOut && (
+              <a href="#buy" class="btn btn-primary inline-block mt-6">Buy Now</a>
+            )}
+          </div>
+
+          <div class="text-gray-600 leading-relaxed space-y-4 mb-8">
+            <p>
+              Run the working face along the edge and two parallel blades mark both lines of the purfling channel in a single pass. Unlike markers that sit on top of the plate with only a small lip over the edge, this one is designed to be used with its body hanging below the plate. On violins, violas and cellos it runs against the edge of the plate, whether the plate is loose or already on the body. Viols have no overhang, and their edge isn't defined until the body is assembled, so they are purfled on the body and the tool runs against the body itself.
+            </p>
+            <p>
+              The edge margin is set with a knurled thumbwheel that feeds the blades in or out on a fine screw, 0.5 mm per turn, so it is smooth and repeatable rather than slide-and-clamp. A knurled knob underneath locks it. The working face is slightly convex with a relief channel down the middle, so the tool bears on the edge at two points and follows irregular edges without rocking.
+            </p>
+            <p>
+              As supplied, the blades are set for 1.5 mm purfling with no adjustment needed. For other purfling, take the blades out, turn them round, and clamp a piece of your purfling between them to set the width.
+            </p>
+            <p>
+              Based on the original design by Brian Hart and Shem Mackey. Solid brass, hand assembled in Britain.
+            </p>
+            <h2 class="font-serif text-xl text-charcoal pt-2">In the box</h2>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Purfling marker, fitted with two blades</li>
+              <li>2 mm hex key for the blade clamp</li>
+              <li>Fitted, hinged case with magnetic catch</li>
+            </ul>
+            <h2 class="font-serif text-xl text-charcoal pt-2">Before use</h2>
+            <p>
+              The blades are supplied unsharpened; sharpen them to suit your work. The edges of the channel in the working face may need a light deburr. Check that the working face won't mark your instrument before use; that is the user's responsibility. Always make a test run on scrap wood before marking the instrument itself. Undo the locking knob before turning the thumbwheel, or you may damage the tool.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Adjustments -->
+      <div class="mt-20 pt-12 border-t border-gray-200 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="max-w-md mx-auto w-full">
+          <Image
+            src={adjustmentsImage}
+            alt="Purfling marker with its parts numbered: 1 working face, 2 blades, 3 thumbwheel, 4 locking knob, 5 blade clamp screw"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 1024px) 100vw, 28rem"
+            class="w-full h-auto"
+          />
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl mb-6">Adjustments</h2>
+          <ol class="space-y-5 text-gray-600">
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">1</span>
+              <div><p class="font-medium text-charcoal">Working face</p><p class="text-sm">Runs against the edge of the plate (violin family) or the body itself (viols, which have no overhang), with the body of the marker hanging below. The relief channel down the middle means it bears at two points.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">2</span>
+              <div><p class="font-medium text-charcoal">Blades</p><p class="text-sm">Mark the two lines of the purfling channel. Set for 1.5 mm purfling as supplied.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">3</span>
+              <div><p class="font-medium text-charcoal">Thumbwheel</p><p class="text-sm">Sets the margin: turn it to move the blades closer to or further from the working face, 0.5 mm per full turn. <strong class="text-charcoal">Always undo the locking knob first.</strong></p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">4</span>
+              <div><p class="font-medium text-charcoal">Locking knob</p><p class="text-sm">Tighten to hold the margin once it is set. It must be done up for the marker to fit back in its case.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-medium">5</span>
+              <div><p class="font-medium text-charcoal">Blade clamp screw</p><p class="text-sm">Loosen with the 2 mm hex key to remove the blades. For other purfling, turn the blades round and clamp a piece of your purfling between them.</p></div>
+            </li>
+          </ol>
+          <div class="mt-8 border-l-4 border-warmgold bg-cream p-5 text-sm text-gray-700">
+            <p class="font-medium text-charcoal mb-1">Important</p>
+            <p>Always undo the locking knob before turning the thumbwheel. Turning the thumbwheel while the knob is tight can damage the tool. Do the knob up again before putting the marker away, or it won't fit in its case.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blade setup -->
+      <div class="mt-20 pt-12 border-t border-gray-200 max-w-4xl mx-auto">
+        <h2 class="font-serif text-2xl mb-3 text-center">Setting the blades</h2>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+          Looking end-on at the two blades, to scale. Each blade is flat on one side and bevelled on the other, with the sharp edge on the flat side.
+        </p>
+        <div class="grid md:grid-cols-2 gap-12">
+          <figure>
+            <BladeSetupDiagram variant="supplied" />
+            <figcaption class="mt-4">
+              <p class="font-medium">As supplied: 1.5 mm purfling</p>
+              <p class="text-sm text-gray-600">Bevels facing each other, sharp edges on the outside. The lines are marked the combined thickness of the two blades apart, 1.4 mm, which is ideal for 1.5 mm purfling. No adjustment needed.</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <BladeSetupDiagram variant="purfling" />
+            <figcaption class="mt-4">
+              <p class="font-medium">Any other purfling</p>
+              <p class="text-sm text-gray-600">Loosen the clamp screw, turn both blades round so the sharp edges face each other, and clamp a piece of your purfling between them. The lines are then marked the width of your purfling apart. It's wise to scrape the spacer piece back by about 0.1 mm first, so the purfling will fit the channel.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Buy -->
+      <div id="buy" class="mt-20 pt-12 border-t border-gray-200 max-w-2xl mx-auto scroll-mt-8">
+          {soldOut ? (
+            <div>
+              <p class="text-gray-600 mb-6">This batch has sold out. Get in touch to hear about the next one.</p>
+              <a href="/contact" class="btn btn-primary">Contact Me</a>
+            </div>
+          ) : !onlineSales ? (
+            <div>
+              <h2 class="font-serif text-2xl mb-4">Buy</h2>
+              <p class="text-gray-600 mb-6">£{price}. Contact me to buy, and I'll confirm postage to you.</p>
+              <a href="/contact" class="btn btn-primary">Contact me to buy</a>
+            </div>
+          ) : (
+            <div>
+              <h2 class="font-serif text-2xl mb-4">Buy</h2>
+              <p class="text-sm text-gray-600 mb-6">Choose where it's being delivered to. Payment is handled securely by Stripe.</p>
+              <div class="space-y-4">
+                {regions.map(region => (
+                  <div class="border border-gray-200 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <div class="flex-1">
+                      <p class="font-medium">{region.name}</p>
+                      <p class="text-sm text-gray-600">£{price} + {region.shipping}</p>
+                      <p class="text-xs text-gray-500 mt-1">{region.note}</p>
+                    </div>
+                    {region.href ? (
+                      <a href={region.href} class="btn btn-primary text-center">Buy</a>
+                    ) : (
+                      <span class="btn text-center opacity-50 cursor-not-allowed">Coming soon</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p class="text-sm text-gray-600 mt-6">
+                Elsewhere, or a European country not listed? <a href="/contact" class="text-warmgold hover:underline">Contact me</a> and I'll quote postage.
+                See the <a href="/terms#sale" class="text-warmgold hover:underline">terms of sale</a> for delivery, returns and cancellation.
+              </p>
+            </div>
+          )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

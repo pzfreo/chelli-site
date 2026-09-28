@@ -18,5 +18,6 @@ export const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/commissions', label: 'Commissions' },
   { href: '/videos', label: 'Videos' },
+  { href: '/purfling-marker', label: 'Shop' },
   { href: '/contact', label: 'Contact' },
 ];

@@ -1,8 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Terms of sale stay hidden until online sales open (seller address and
+// dispatch time still to fill in).
+const showSaleTerms = false;
 ---
 
-<BaseLayout title="Terms and Privacy" description="Privacy policy and terms of use for Chelli Strings.">
+<BaseLayout title="Terms and Privacy" description={showSaleTerms ? "Privacy policy and terms of sale for Chelli Strings." : "Privacy policy and terms of use for Chelli Strings."}>
   <section class="py-12 lg:py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-4xl mx-auto">
       <h1 class="font-serif text-4xl lg:text-5xl mb-8">Privacy Policy</h1>
@@ -65,13 +69,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           We reserve the right to modify this Privacy Policy at any time. Any changes will be reflected on this page with an updated effective date.
         </p>
 
+        {showSaleTerms && (
+          <>
+          <h2 id="sale" class="font-serif text-2xl mt-12 mb-4">Terms of Sale</h2>
+          <p class="text-gray-600 mb-4">
+            These terms apply to goods bought through this website, such as the purfling marker. The seller is Paul Fremantle, trading as Chelli Strings, TODO geographic address. Email <a href="mailto:paul@fremantle.org" class="text-warmgold hover:underline">paul@fremantle.org</a>.
+          </p>
+
+          <h3 class="font-medium text-lg mt-8 mb-2">Prices and Payment</h3>
+          <p class="text-gray-600 mb-4">
+            Prices are in pounds sterling. Chelli Strings is not VAT registered, so no UK VAT is charged. Payment is taken by Stripe at the time of order.
+          </p>
+
+          <h3 class="font-medium text-lg mt-8 mb-2">Delivery</h3>
+          <p class="text-gray-600 mb-4">
+            Orders are sent by Royal Mail Tracked, normally within TODO working days. For delivery to the European countries and the United States listed on the product page, import VAT and duty are included in the shipping price and paid in advance, so there is nothing more to pay on delivery. For other destinations, any import taxes, duties or fees are the buyer's responsibility.
+          </p>
+
+          <h3 class="font-medium text-lg mt-8 mb-2">Cancellations and Returns</h3>
+          <p class="text-gray-600 mb-4">
+            If you are buying as a consumer, you may cancel your order for any reason within 14 days of receiving the goods. Tell me by email, then return the item unused within 14 days. You pay the cost of returning it. I will refund the price and the standard outbound postage within 14 days of receiving the item back. Import VAT and duty already paid to another country cannot be refunded by me, and the €3 EU customs duty is not refundable at all.
+          </p>
+
+          <h3 class="font-medium text-lg mt-8 mb-2">Faulty Goods</h3>
+          <p class="text-gray-600 mb-4">
+            If an item arrives damaged or faulty, contact me and I will repair, replace or refund it, including return postage. This does not affect your statutory rights.
+          </p>
+          </>
+        )}
+
         <h2 class="font-serif text-2xl mt-12 mb-4">Contact Us</h2>
         <p class="text-gray-600 mb-4">
           If you have any questions or concerns regarding this Privacy Policy, please <a href="/contact" class="text-warmgold hover:underline">contact us</a>.
         </p>
 
         <p class="text-sm text-gray-500 mt-12">
-          Last updated: December 2023
+          Last updated: {showSaleTerms ? 'TODO month 2026' : 'December 2023'}
         </p>
       </div>
     </div>
