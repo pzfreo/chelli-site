@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Terms of sale stay hidden until online sales open (seller address and
-// dispatch time still to fill in).
-const showSaleTerms = false;
+// Set to false to hide the terms of sale if online sales close.
+const showSaleTerms = true;
 ---
 
 <BaseLayout title="Terms and Privacy" description={showSaleTerms ? "Privacy policy and terms of sale for Chelli Strings." : "Privacy policy and terms of use for Chelli Strings."}>
@@ -73,17 +72,17 @@ const showSaleTerms = false;
           <>
           <h2 id="sale" class="font-serif text-2xl mt-12 mb-4">Terms of Sale</h2>
           <p class="text-gray-600 mb-4">
-            These terms apply to goods bought through this website, such as the purfling marker. The seller is Paul Fremantle, trading as Chelli Strings, TODO geographic address. Email <a href="mailto:paul@fremantle.org" class="text-warmgold hover:underline">paul@fremantle.org</a>.
+            These terms apply to goods bought through this website, such as the purfling marker. The seller is Betwixt Limited, trading as Chelli Strings, a company registered in England and Wales (company number 10573596), registered office Mandage House, Westerton, Chichester, PO18 0PG. Email <a href="mailto:paul@fremantle.org" class="text-warmgold hover:underline">paul@fremantle.org</a>.
           </p>
 
           <h3 class="font-medium text-lg mt-8 mb-2">Prices and Payment</h3>
           <p class="text-gray-600 mb-4">
-            Prices are in pounds sterling. Chelli Strings is not VAT registered, so no UK VAT is charged. Payment is taken by Stripe at the time of order.
+            Prices are in pounds sterling. Betwixt Limited is not VAT registered, so no UK VAT is charged. Payment is taken by Stripe at the time of order.
           </p>
 
           <h3 class="font-medium text-lg mt-8 mb-2">Delivery</h3>
           <p class="text-gray-600 mb-4">
-            Orders are sent by Royal Mail Tracked, normally within TODO working days. For delivery to the European countries and the United States listed on the product page, import VAT and duty are included in the shipping price and paid in advance, so there is nothing more to pay on delivery. For other destinations, any import taxes, duties or fees are the buyer's responsibility.
+            Orders are sent by Royal Mail Tracked, within 2 working days. For delivery to the European countries and the United States listed on the product page, import VAT and duty are included in the shipping price and paid in advance, so there is nothing more to pay on delivery. For other destinations, any import taxes, duties or fees are the buyer's responsibility.
           </p>
 
           <h3 class="font-medium text-lg mt-8 mb-2">Cancellations and Returns</h3>
@@ -104,7 +103,7 @@ const showSaleTerms = false;
         </p>
 
         <p class="text-sm text-gray-500 mt-12">
-          Last updated: {showSaleTerms ? 'TODO month 2026' : 'December 2023'}
+          Last updated: {showSaleTerms ? 'October 2026' : 'December 2023'}
         </p>
       </div>
     </div>
