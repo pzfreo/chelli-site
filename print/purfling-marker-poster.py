@@ -5,6 +5,10 @@ installed. Uses the product images from src/assets/shop, so re-run it
 after changing those. Writes the PDF next to this file.
 
     python print/purfling-marker-poster.py
+
+On macOS with Homebrew cairo, run it with
+DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib, and install static Inter
+Regular and Bold: cairo there can't pick a bold weight from the variable font.
 """
 import base64, io, pathlib, cairosvg
 from PIL import Image
@@ -71,15 +75,20 @@ for i,(lines,bold) in enumerate(steps):
     for line in lines:
         out.append(f'<text x="{bx+105}" y="{yy}" font-size="33" fill="{C}"{" font-weight=\"600\"" if bold else ""}>{line}</text>'); yy+=44
     yy+=26
-yn=y3+dh+120
+yn=y3+dh+90
+notes=["I found one of these markers at a second-hand tool sale and loved it. My tutor, Shem Mackey,",
+       "uses two of them together, but I couldn't find a second one, so I decided to make them.",
+       "Based on the original design by Brian Hart and Shem Mackey, and made with the generous",
+       "permission of Shem Mackey and of Brian's son, Steve Hart.",
+       "Supplied in a fitted case with a 2 mm hex key."]
+for j,line in enumerate(notes):
+    out.append(f'<text x="{W/2}" y="{yn+j*42}" text-anchor="middle" font-size="31" fill="{T}">{line}</text>')
 svg=f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="Inter">
 <rect width="{W}" height="{H}" fill="#ffffff"/>
 <image x="{(W-640)/2}" y="70" width="640" height="{640*lh/lw:.0f}" xlink:href="{logo}"/>
 <text x="{W/2}" y="440" text-anchor="middle" font-family="Playfair Display" font-size="150" fill="{C}">Purfling Marker</text>
 <text x="{W/2}" y="530" text-anchor="middle" font-size="50" fill="{T}">A double-blade purfling marker in solid brass</text>
 {''.join(out)}
-<text x="{W/2}" y="{yn}" text-anchor="middle" font-size="34" fill="{T}">Based on the original design by Brian Hart and Shem Mackey.</text>
-<text x="{W/2}" y="{yn+50}" text-anchor="middle" font-size="34" fill="{T}">Supplied in a fitted case with a 2 mm hex key.</text>
 <rect x="0" y="2580" width="{W}" height="390" fill="#f5f5f0"/>
 <text x="150" y="2810" font-family="Playfair Display" font-size="220" fill="{G}">£99</text>
 <text x="{R}" y="2700" text-anchor="end" font-family="Playfair Display" font-size="64" fill="{C}">Paul Fremantle</text>
